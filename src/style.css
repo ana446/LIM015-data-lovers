@@ -1,0 +1,26 @@
+*,*:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #fff;
+}
+
+.menu {
+    background: #202328;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 6px solid #EFB810;
+}
+header {
+    display: flex;
+    display: none;
+}
+figure {
+    background-color: red;
+}
