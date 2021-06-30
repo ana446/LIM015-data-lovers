@@ -13,5 +13,18 @@ addEventListener('DOMContentLoaded', () => {
 })
 
 
+<<<<<<< HEAD
+console.log(example, data);
+
+
+
+
+
+
+
+
+
+=======
 
 //console.log(example, data);
+>>>>>>> fe0f27055d3b2306b1235ac64dc60f416cb54e89
