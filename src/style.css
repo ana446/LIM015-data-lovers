@@ -139,7 +139,7 @@ footer {
     border-top:4px solid #EFB810;
     background-color: #202328;
     bottom: 0px;
-    position: fixed;
+    /*position: fixed;*/
     color: #fff;
     width: 100vw;
     text-align: center;
