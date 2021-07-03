@@ -11,6 +11,8 @@ addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+
  function prueba(){
     
     dataLolArr.forEach((e) => {
@@ -29,4 +31,3 @@ addEventListener('DOMContentLoaded', () => {
 };
 
  prueba();
-
