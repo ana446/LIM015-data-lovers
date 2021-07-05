@@ -151,6 +151,15 @@ ul.show {
 .colorNone{
     opacity: .5;
 }
+/*** bannerLol***/
+
+#mainContainer .bannerLol{
+    font-size: 24px;
+    padding: 50px 0 50px 0;
+    
+}
+
+
 
 /****** footer *****/
 footer {
@@ -188,14 +197,14 @@ footer section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1440px;
+    width: 100vw;
 }
 .showCardsLol img {
     width: 300px;
     border-radius: 30px 30px 0 0 ;
 }
 .showCardsLol p {
-    padding: 10px;
+    padding: 20px;
     text-transform: uppercase;
     
 }
@@ -228,8 +237,18 @@ main .mainCardsLol{
         padding-left: 35px;
         width: 34px;
     }
-    .menuItems li a {
+    .menuItems li a  {
         font-size: 16px;
+    }
+    .showCardsLol p{
+        font-size: 15px;
+    }
+    .showCardsLol img{
+        width: 150px;
+    }
+    .bannerLol  p{
+        font-size: 16px;
+        padding: 0 50px 0 50px;
     }
     
 }
