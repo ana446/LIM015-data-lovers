@@ -14,18 +14,6 @@ addEventListener('DOMContentLoaded', () => {
     }
 });
 
-<<<<<<< HEAD
-// mostrar todos los campeones
- function showChampions(){
-||||||| 205f488
-// prueba del gitt este no valencia
-function showSlider() {
-    dskdkdsk
-}
-
-// mostrar todos los campeones
- function showChampions(){
-=======
 //mostrar el slider y banner
 const mainSliderLol = document.querySelector(".mainSliderLol");
 const bannerLol = document.querySelector(".bannerLol")
@@ -39,7 +27,6 @@ showSliderLol();
 
 // mostrar todos los campeones al inicio
  function showChampions (dataLolArray)  {
->>>>>>> e2b766f12972f329f78f82232ac3236e5ebc5c2e
     
     dataLolArray.forEach((e) => {
         const mainCardsLol = document.getElementById("mainCardsLol");
@@ -200,11 +187,4 @@ tankRols.addEventListener('click', (e) => {
     
 
 
-<<<<<<< HEAD
-||||||| 205f488
-console.log();
-
-=======
-
->>>>>>> e2b766f12972f329f78f82232ac3236e5ebc5c2e
 
