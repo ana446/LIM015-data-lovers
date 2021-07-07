@@ -9,6 +9,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background: #ffff;
+  overflow-x: hidden;
 }
 
 header {
@@ -29,6 +30,7 @@ header {
   font-weight: bold;
   color: #efb810;
   text-align: center;
+<<<<<<< HEAD
   padding-left: 20px;
 }
 
@@ -36,8 +38,15 @@ header {
   display: flex;
   align-items: center;
 
+||||||| 205f488
+=======
+  padding-left: 20px;
 }
-
+.mainLogo {
+  display: flex;
+  align-items: center;
+>>>>>>> e2b766f12972f329f78f82232ac3236e5ebc5c2e
+}
 .mainLogo .logo {
   width: 70px;
   margin-left: 15px;
@@ -192,6 +201,8 @@ footer section {
   color: #ffffff;
 }
 #mainCardsLol {
+  /* background-position: center center; */
+  background-attachment: fixed;
   background-image: url(./images/fondomapa2.jpg);
   display: flex;
   flex-wrap: wrap;
@@ -228,6 +239,23 @@ main .mainCardsLol {
   padding-top: 1050px;
 }
 
+/* sectionElementRol*/
+.sectionElementRol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionElementRol > img {
+  width: 65px;
+  margin: 20px 0 20px 0;
+}
+.sectionElementRol > p {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 10px;
+  text-shadow: -4px 3px 0 #efb810;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .logo {
@@ -247,6 +275,7 @@ main .mainCardsLol {
     font-size: 16px;
     padding: 0 50px 0 50px;
   }
+<<<<<<< HEAD
   .menu .logoInformation {
     font-size: 16px;
     padding-left: 10px;
@@ -254,6 +283,25 @@ main .mainCardsLol {
   main {
     padding-top: 65px;
   }
+||||||| 205f488
+}
+
+@media only screen and (max-width: 600px) {
+=======
+  .menu .logoInformation {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  .main {
+    padding-block-end: 65px;
+  }
+  .sectionElementRol > p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+>>>>>>> e2b766f12972f329f78f82232ac3236e5ebc5c2e
   .menu {
     height: 65px;
   }
@@ -378,6 +426,7 @@ main .mainCardsLol {
     font-size: 15px;
   }
 }
+<<<<<<< HEAD
 
 @media only screen and (max-width: 600px) and (orientation: landscape) {
   .menuItems li {
@@ -388,3 +437,17 @@ main .mainCardsLol {
     height: calc(100% - 65px);
   }
 }
+||||||| 205f488
+
+@media only screen and (max-width: 600px) and (orientation: eliminar) {
+  .menuItems li {
+    margin: 5px 0 0 0;
+  }
+  .menuItems {
+    overflow: scroll;
+    height: calc(100% - 65px);
+  }
+}
+=======
+/* img:hover{ transform: scale(2) } */
+>>>>>>> e2b766f12972f329f78f82232ac3236e5ebc5c2e
