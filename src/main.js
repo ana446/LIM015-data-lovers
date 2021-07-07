@@ -11,11 +11,6 @@ addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// prueba del gitt este no valencia
-function showSlider() {
-    dskdkdsk
-}
-
 // mostrar todos los campeones
  function showChampions(){
     
@@ -35,7 +30,5 @@ function showSlider() {
 };
 
 showChampions();
-
-console.log();
 
 

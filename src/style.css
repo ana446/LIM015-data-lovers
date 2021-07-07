@@ -29,6 +29,13 @@ header {
   font-weight: bold;
   color: #efb810;
   text-align: center;
+  padding-left: 20px;
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+
 }
 
 .mainLogo .logo {
@@ -190,6 +197,8 @@ footer section {
   flex-wrap: wrap;
   justify-content: center;
   width: 100vw;
+  background-attachment: fixed;
+  background-position: center center;
 }
 .showCardsLol img {
   width: 300px;
@@ -238,9 +247,89 @@ main .mainCardsLol {
     font-size: 16px;
     padding: 0 50px 0 50px;
   }
+  .menu .logoInformation {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  main {
+    padding-top: 65px;
+  }
+  .menu {
+    height: 65px;
+  }
+  .buttonMenu {
+    display: inline-flex;
+  }
+  .menuItems {
+    position: fixed;
+    width: 100vw;
+    height: calc(100% - 65px);
+    background: #202328;
+    top: -100vh;
+    text-align: center;
+    transform: all 0.4s;
+    flex-direction: column;
+  }
+  .menuItems li {
+    margin: 10px 0 0 0;
+    line-height: 30px;
+  }
+  .menuItems li:hover {
+    background: none;
+  }
+  .menuItems li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .menuItems li a:hover {
+    color: #efb810;
+  }
+
+  .subMenu {
+    position: relative;
+  }
+  .subMenu li a {
+    font-size: 14px;
+  }
+
+  footer {
+    height: 60px;
+  }
+
+  footer section {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+  .logo {
+    padding-left: 35px;
+    width: 34px;
+  }
+  .menuItems li a {
+    font-size: 16px;
+  }
+  .showCardsLol p {
+    font-size: 15px;
+  }
+  .showCardsLol img {
+    width: 150px;
+  }
+  .bannerLol p {
+    font-size: 16px;
+    padding: 0 50px 0 50px;
+  }
+  .menu .logoInformation {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  main {
+    padding-top: 65px;
+  }
   .menu {
     height: 65px;
   }
@@ -291,25 +380,6 @@ main .mainCardsLol {
 }
 
 @media only screen and (max-width: 600px) and (orientation: landscape) {
-<<<<<<< HEAD
-    .menuItems li {
-        margin: 5px 0 0 0;
-    }
-    .menuItems {
-        overflow: scroll;
-        height: calc(100% - 65px);
-    }
-}
-||||||| d8700f6
-    .menuItems li {
-        margin: 5px 0 0 0;
-    }
-    .menuItems {
-        overflow: scroll;
-        height: calc(100% - 65px);
-    }
-}
-=======
   .menuItems li {
     margin: 5px 0 0 0;
   }
@@ -318,14 +388,3 @@ main .mainCardsLol {
     height: calc(100% - 65px);
   }
 }
-
-@media only screen and (max-width: 600px) and (orientation: eliminar) {
-  .menuItems li {
-    margin: 5px 0 0 0;
-  }
-  .menuItems {
-    overflow: scroll;
-    height: calc(100% - 65px);
-  }
-}
->>>>>>> 205f488747509d6d61ced06fc66f1357fb64f1f1
