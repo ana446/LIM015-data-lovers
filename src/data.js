@@ -1,11 +1,10 @@
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
+export const showFilterRols = (dataLolArray , roles) => {
+  
+  const filterRolsLolData = ({tags}) => tags.includes(roles);
+  const filterRolsLol = dataLolArray.filter(filterRolsLolData );
+  return filterRolsLol;
 };
 
 export const anotherExample = () => {
   return 'OMG';
-  
-   
 };
