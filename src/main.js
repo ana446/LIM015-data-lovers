@@ -3,16 +3,21 @@ import champions from './data/lol/lol.js';
 import {showFilterRols} from  './data.js';
 
 const dataLolArray = Object.values(champions.data);
+const menuItems = document.querySelector('.menuItems');
 // menu Hamburguesa
 addEventListener('DOMContentLoaded', () => {
     const buttonMenu = document.querySelector('.buttonMenu')
     if(buttonMenu) {
         buttonMenu.addEventListener('click',() => {
-            const menuItems = document.querySelector('.menuItems')
+            
             menuItems.classList.toggle('show');
         })
     }
 });
+
+//ocultar menu responsive
+const removeMenuLOl = () => menuItems.classList.remove('show');
+
 
 //mostrar el slider y banner
 const mainSliderLol = document.querySelector(".mainSliderLol");
@@ -24,6 +29,14 @@ function showSliderLol() {
     bannerLol.innerHTML = bannerLolText;
 }
 showSliderLol();
+
+//recargar la pagina
+const reload = document.querySelector('.mainLogo');
+reload.addEventListener('click', recargar);
+function recargar(){
+    location.reload();
+}
+
 
 // mostrar todos los campeones al inicio
  function showChampions (dataLolArray)  {
@@ -42,14 +55,15 @@ showSliderLol();
 
     });
 };
-
 showChampions(dataLolArray);
+
 // mostrar todos los campeones-menu todos
 const allChampion = document.querySelector('.allChampion');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    removeMenuLOl();
     const nameRol = 
     ` 
     <img src="./images/assessin_icon.png">
@@ -75,7 +89,7 @@ assassinRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Assassin";
     mainCardsLol.innerHTML="";
-    
+    removeMenuLOl();
     if (roles === "Assassin") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);
@@ -96,6 +110,7 @@ fighterRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Fighter";
     mainCardsLol.innerHTML="";
+    removeMenuLOl();
     if (roles === "Fighter") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);
@@ -114,6 +129,7 @@ mageRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Mage";
     mainCardsLol.innerHTML="";
+    removeMenuLOl();
     if (roles === "Mage") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);
@@ -132,6 +148,7 @@ marksmanRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Marksman";
     mainCardsLol.innerHTML="";
+    removeMenuLOl();
     if (roles === "Marksman") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);
@@ -150,6 +167,7 @@ supportRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Support";
     mainCardsLol.innerHTML="";
+    removeMenuLOl();
     if (roles === "Support") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);
@@ -168,6 +186,7 @@ tankRols.addEventListener('click', (e) => {
     e.preventDefault();
     const roles = "Tank";
     mainCardsLol.innerHTML="";
+    removeMenuLOl();
     if (roles === "Tank") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         console.log(filtroRols);

@@ -31,10 +31,12 @@ header {
   color: #efb810;
   text-align: center;
   padding-left: 20px;
+  cursor: pointer;
 }
 .mainLogo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .mainLogo .logo {
   width: 70px;
