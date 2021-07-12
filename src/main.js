@@ -1,68 +1,108 @@
 // import { example } from './data.js';
 import champions from './data/lol/lol.js';
-import {showFilterRols} from  './data.js';
+import {showFilterRols , showFilterByDifficulty , searchLol } from  './data.js';
 
 const dataLolArray = Object.values(champions.data);
 const menuItems = document.querySelector('.menuItems');
+const mainContainer = document.querySelector('#mainContainer');
 // menu Hamburguesa
 addEventListener('DOMContentLoaded', () => {
     const buttonMenu = document.querySelector('.buttonMenu')
     if(buttonMenu) {
         buttonMenu.addEventListener('click',() => {
-            
-            menuItems.classList.toggle('show');
+          menuItems.classList.toggle('show');
         })
     }
 });
 
-//ocultar menu responsive
+//hide responsive menu
 const removeMenuLOl = () => menuItems.classList.remove('show');
 
-
-//mostrar el slider y banner
+//show slider and banner
 const mainSliderLol = document.querySelector(".mainSliderLol");
 const bannerLol = document.querySelector(".bannerLol")
 function showSliderLol() {
     const sliderLolLogo = `<img src="images/fondobaner.jpg"  alt="">`;
-    const bannerLolText = `<p>Hay más de 130 campeones, no tardarás en encontrar <br>a tu preferido. </p>`;
+    const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainSliderLol.innerHTML = sliderLolLogo;
     bannerLol.innerHTML = bannerLolText;
 }
 showSliderLol();
 
-//recargar la pagina
+//reload the page
 const reload = document.querySelector('.mainLogo');
-reload.addEventListener('click', recargar);
-function recargar(){
+reload.addEventListener('click', reloadPage);
+function reloadPage(){
     location.reload();
 }
 
 
-// mostrar todos los campeones al inicio
+// show all champions- landing page
+const mainCardsLol = document.getElementById("mainCardsLol");
  function showChampions (dataLolArray)  {
-    
-    dataLolArray.forEach((e) => {
-        const mainCardsLol = document.getElementById("mainCardsLol");
-        const divElement = document.createElement("section");
-        divElement.setAttribute("class","showCardsLol");
+     dataLolArray.forEach((e) => {
+        
+        const boxCardsLol = document.createElement("section");
+        const showCardsLol = document.createElement("section");
+        const faceCardsLol = document.createElement("section");
+        const backOfCardsLol = document.createElement("section");
+        const buttonInformation = document.createElement("button")
+        boxCardsLol.setAttribute("class", "boxCardsLol");
+        showCardsLol.setAttribute("class","showCardsLol");
+        faceCardsLol.setAttribute("class","faceCardsLol");
+        backOfCardsLol.setAttribute("class","backOfCardsLol");
+        buttonInformation.setAttribute("class","buttonInformation");
+        buttonInformation.textContent="More";
         const nameChampion = 
         ` 
         <img src="${e.splash}">
-        <p> ${e.name}</p>
+        <p class="nameLol"> ${e.name}</p>
         `; 
-        divElement.innerHTML = nameChampion;
-        mainCardsLol.appendChild(divElement);        
+        const  infoChampions = `
+        <table class= "infoChampions">
+            <tr>
+                <th colspan="2">INFORMATION </th>
+            </tr>
+            <tr>
+                <th>Attack</th>
+                <td>${e.info.attack}</td>
+            </tr>
+            <tr>
+                <th>Defense</th>
+                <td>${e.info.defense}</td>
+            </tr>
+            <tr>
+                <th>Magic</th>
+                <td>${e.info.magic}</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>${e.info.difficulty}</td>
+            </tr>
+        </table>
+        
+        `;
+        // const <button class="buttonInformation"> More</button>
+        faceCardsLol.innerHTML = nameChampion;
+        backOfCardsLol.innerHTML = infoChampions;
+        mainCardsLol.appendChild(boxCardsLol);
+        boxCardsLol.appendChild(showCardsLol); 
+        showCardsLol.appendChild(faceCardsLol);
+        showCardsLol.appendChild(backOfCardsLol);
+        backOfCardsLol.appendChild(buttonInformation);       
 
     });
 };
 showChampions(dataLolArray);
 
-// mostrar todos los campeones-menu todos
+//show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    mainCardsLol.innerHTML="";
+    
     removeMenuLOl();
     const nameRol = 
     ` 
@@ -77,7 +117,7 @@ allChampion.addEventListener('click', (e) => {
     showChampions(dataLolArray);
 })
 
-//filtrar por roles
+//filterByRole
 const assassinRols = document.querySelector('.assassinRols');
 const fighterRols = document.querySelector('.fighterRols');
 const mageRols = document.querySelector('.mageRols');
@@ -98,7 +138,7 @@ assassinRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/assessin_icon.png">
-        <p>ASESINOS</p>
+        <p>ASSESSINS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -119,7 +159,7 @@ fighterRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/Fighter_icon.png">
-        <p> LUCHADORES</p>
+        <p> FIGHTERS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -138,7 +178,7 @@ mageRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/mage_icon.png">
-        <p> MAGOS</p>
+        <p> MAGES</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -157,7 +197,7 @@ marksmanRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/marksman_icon.png">
-        <p>TIRADORES</p>
+        <p>MARKSMEN</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -176,7 +216,7 @@ supportRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/support_icon.png">
-        <p>APOYOS</p>
+        <p>SUPPORTS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -195,15 +235,83 @@ tankRols.addEventListener('click', (e) => {
         const nameRol = 
         ` 
         <img src="./images/tank_icon.png">
-        <p>TANQUES</p>
+        <p>TANKS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
-        showChampions(filtroRols);
+        const tanksRole = showChampions(filtroRols);
+        
     }
 });
 
+//filterByDifficulty
+const lowDifficulty = document.querySelector(".lowDifficulty");
+
+lowDifficulty.addEventListener("click",(e)=>{
+    e.preventDefault();
+    const holaa = showFilterByDifficulty(dataLolArray);
+     console.log(holaa);
+    
+    
+    // const di =  dataLolArray.info.difficulty.value;
+    // if (di <=2){
+    //     showFilterByDifficulty(dataLolArray);
+    // }
 
     
+});
+
+//search champions
+const searchChampions = document.querySelector("#searchChampions");
+
+const searchLolChampions = searchChampions.addEventListener("keyup", (e)=>{
+    e.preventDefault();
+    mainCardsLol.innerHTML="";
+    removeMenuLOl();
+    bannerLol.style.display ="none";
+    mainSliderLol.style.display ="none";
+    const searchString = (e.target.value).toLowerCase();
+    console.log(searchString);
+    const searchChampionsLol = searchLol(dataLolArray,searchString);
+    // console.log(filterLol);
+    showChampions(searchChampionsLol);
+});
+
+//show all information about the champions
 
 
+document.body.addEventListener('click', (e) =>{
+    e.preventDefault();
+    
+    if(e.target.classList == 'buttonInformation'){
+        // bannerLol.style.display ="none";
+        // mainSliderLol.style.display ="none";
+        mainContainer.innerHTML="";
+        console.log("hola");
+        // mainContainer
+        dataLolArray.forEach((data) => {
+            const otro = 'Aatrox';
+
+            if(data.id.includes(otro)){
+                const championsInformation = document.createElement('section');
+                const boxNameChampions = document.createElement('section');
+                championsInformation.setAttribute("class","championsInformation");
+                boxNameChampions.setAttribute("class","boxNameChampions");
+                const boxNameLol = `
+                <img src="${data.splash}">
+                <p>${data.title}</p>
+                <h1>${data.name}</h1>
+                `;
+                boxNameChampions.innerHTML=boxNameLol;
+                mainContainer.appendChild(championsInformation);
+                championsInformation.appendChild(boxNameChampions);
+            }
+            
+    })
+    }
+})
+// document.body.addEventListener( 'click', function ( event ) {
+//     if( event.target.id == 'btnSubmit' ) {
+//       someFunc();
+//     };
+//   } );
 
