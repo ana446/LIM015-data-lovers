@@ -5,6 +5,7 @@ import {showFilterRols , showFilterByDifficulty , searchLol } from  './data.js';
 const dataLolArray = Object.values(champions.data);
 const menuItems = document.querySelector('.menuItems');
 const mainContainer = document.querySelector('#mainContainer');
+const mainCardsLol = document.getElementById("mainCardsLol");
 // menu Hamburguesa
 addEventListener('DOMContentLoaded', () => {
     const buttonMenu = document.querySelector('.buttonMenu')
@@ -24,10 +25,68 @@ const bannerLol = document.querySelector(".bannerLol")
 function showSliderLol() {
     const sliderLolLogo = `<img src="images/fondobaner.jpg"  alt="">`;
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
+    mainCardsLol.innerHTML = "";
     mainSliderLol.innerHTML = sliderLolLogo;
     bannerLol.innerHTML = bannerLolText;
+    //const cardsRoles = createElement('section');
+    //cardsRoles.setAttribute('id','mainCardsLol');
+    const boxCardsRoles = `
+        <section id="cardAssassins" class="boxCardsRoles">
+        <img src="images/cards-asesinos.jpg">
+        <p class="nameLol"><img src="images/assessin_icon.png">Assassins</p>
+        </section>
+        <section id="cardFighters" class="boxCardsRoles">
+        <img src="images/cards-luchadores.jpg">
+        <p class="nameLol"><img src="images/Fighter_icon.png">Fighters</p>
+        </section>
+        <section id="cardMages" class="boxCardsRoles">
+        <img src="images/cards-magos.jpg">
+        <p class="nameLol"><img src="images/mage_icon.png">Mages</p>
+        </section>
+        <section id="cardMarksmen" class="boxCardsRoles">
+        <img src="images/cards-tiradores.jpg">
+        <p class="nameLol"><img src="images/marksman_icon.png">Marksmen</p>
+        </section>
+        <section id="cardSupports" class="boxCardsRoles">
+        <img src="images/cards-apoyos.jpg">
+        <p class="nameLol"><img src="images/support_icon.png">Supports</p>
+        </section>
+        <section id="cardTanks" class="boxCardsRoles">
+        <img src="images/cards-tanques.jpg">
+        <p class="nameLol"><img src="images/tank_icon.png">Tanks</p>
+        </section>
+        `;
+    mainCardsLol.innerHTML = boxCardsRoles;
+
 }
 showSliderLol();
+
+//show roles filter - landingpage
+const cardAssassinsLol = document.querySelector('#cardAssassins');
+const cardFightersLol = document.querySelector('#cardFighters');
+const cardMagesLol = document.querySelector('#cardMages');
+const cardMarksmenLol = document.querySelector('#cardMarksmen');
+const cardSupportsLol = document.querySelector('#cardSupports');
+const cardTanksLol = document.querySelector('#cardTanks');
+
+cardAssassinsLol.addEventListener('click', () =>{
+    filterbyAssassins();
+} )
+cardFightersLol.addEventListener('click', () => {
+    filterbyFighters();
+} )
+cardMagesLol.addEventListener('click', () => {
+    filterbyMages();
+} )
+cardMarksmenLol.addEventListener('click', () => {
+    filterbyMarksmen();
+} )
+cardSupportsLol.addEventListener('click', () => {
+    filterbySupports();
+} )
+cardTanksLol.addEventListener('click', () => {
+    filterbyTanks();
+} )
 
 //reload the page
 const reload = document.querySelector('.mainLogo');
@@ -38,7 +97,7 @@ function reloadPage(){
 
 
 // show all champions- landing page
-const mainCardsLol = document.getElementById("mainCardsLol");
+
  function showChampions (dataLolArray)  {
      dataLolArray.forEach((e) => {
         
@@ -93,7 +152,7 @@ const mainCardsLol = document.getElementById("mainCardsLol");
 
     });
 };
-showChampions(dataLolArray);
+//showChampions(dataLolArray);
 
 //show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
@@ -125,8 +184,7 @@ const marksmanRols = document.querySelector('.marksmanRols');
 const supportRols = document.querySelector('.supportRols');
 const tankRols = document.querySelector('.tankRols');
 const sectionElementRol = document.querySelector(".sectionElementRol")
-assassinRols.addEventListener('click', (e) => {
-    e.preventDefault();
+const filterbyAssassins = () => {
     const roles = "Assassin";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -141,13 +199,11 @@ assassinRols.addEventListener('click', (e) => {
         <p>ASSESSINS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
-        showChampions(filtroRols);
-        
-        
+        showChampions(filtroRols);    
     }
-});
-fighterRols.addEventListener('click', (e) => {
-    e.preventDefault();
+}
+
+const filterbyFighters = () => {
     const roles = "Fighter";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -164,9 +220,9 @@ fighterRols.addEventListener('click', (e) => {
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
     }
-});
-mageRols.addEventListener('click', (e) => {
-    e.preventDefault();
+}
+
+const filterbyMages = () => {
     const roles = "Mage";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -183,9 +239,9 @@ mageRols.addEventListener('click', (e) => {
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
     }
-});
-marksmanRols.addEventListener('click', (e) => {
-    e.preventDefault();
+}
+
+const filterbyMarksmen = () => {
     const roles = "Marksman";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -202,9 +258,9 @@ marksmanRols.addEventListener('click', (e) => {
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
     }
-});
-supportRols.addEventListener('click', (e) => {
-    e.preventDefault();
+}
+
+const filterbySupports = () => {
     const roles = "Support";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -221,9 +277,9 @@ supportRols.addEventListener('click', (e) => {
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
     }
-});
-tankRols.addEventListener('click', (e) => {
-    e.preventDefault();
+}
+
+const filterbyTanks = () => {
     const roles = "Tank";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
@@ -239,8 +295,32 @@ tankRols.addEventListener('click', (e) => {
         `; 
         sectionElementRol.innerHTML = nameRol;
         const tanksRole = showChampions(filtroRols);
-        
     }
+}
+
+assassinRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbyAssassins();
+});
+fighterRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbyFighters();
+});
+mageRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbyMages();
+});
+marksmanRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbyMarksmen();
+});
+supportRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbySupports();
+});
+tankRols.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterbyTanks();
 });
 
 //filterByDifficulty
@@ -248,8 +328,17 @@ const lowDifficulty = document.querySelector(".lowDifficulty");
 
 lowDifficulty.addEventListener("click",(e)=>{
     e.preventDefault();
-    const holaa = showFilterByDifficulty(dataLolArray);
-     console.log(holaa);
+    //const dificultadBaja = Object.entries(dataLolArray);
+    const algo = dataLolArray.find(elemento => elemento.info.difficulty === 3);
+    console.log(algo);
+
+    //let dificultadBaja = Object.entries(dataLolArray);
+    //console.log(dificultadBaja[1][1]);
+    //dificultadBaja.forEach((element) => console.log(element));
+
+
+    //const holaa = showFilterByDifficulty(dataLolArray);
+    //console.log('dificultadBaja');
     
     
     // const di =  dataLolArray.info.difficulty.value;
