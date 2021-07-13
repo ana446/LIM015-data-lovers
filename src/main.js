@@ -23,7 +23,7 @@ const removeMenuLOl = () => menuItems.classList.remove('show');
 const mainSliderLol = document.querySelector(".mainSliderLol");
 const bannerLol = document.querySelector(".bannerLol")
 function showSliderLol() {
-    const sliderLolLogo = `<img src="images/fondobaner.jpg"  alt="">`;
+    const sliderLolLogo = `<img src="images/fondobaner.jpg">`;
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainCardsLol.innerHTML = "";
     mainSliderLol.innerHTML = sliderLolLogo;
@@ -111,6 +111,7 @@ function reloadPage(){
         faceCardsLol.setAttribute("class","faceCardsLol");
         backOfCardsLol.setAttribute("class","backOfCardsLol");
         buttonInformation.setAttribute("class","buttonInformation");
+        buttonInformation.setAttribute("id", e.id);
         buttonInformation.textContent="More";
         const nameChampion = 
         ` 
@@ -163,7 +164,7 @@ allChampion.addEventListener('click', (e) => {
     mainCardsLol.innerHTML="";
     
     removeMenuLOl();
-    const nameRol = 
+    const nameRol =
     ` 
     <img src="./images/assessin_icon.png">
     <img src="./images/Fighter_icon.png">
@@ -325,27 +326,39 @@ tankRols.addEventListener('click', (e) => {
 
 //filterByDifficulty
 const lowDifficulty = document.querySelector(".lowDifficulty");
+const moderateDifficulty = document.querySelector(".moderateDifficulty");
+const highDifficulty = document.querySelector(".highDifficulty");
 
 lowDifficulty.addEventListener("click",(e)=>{
     e.preventDefault();
-    //const dificultadBaja = Object.entries(dataLolArray);
-    const algo = dataLolArray.find(elemento => elemento.info.difficulty === 3);
-    console.log(algo);
+    const rangeDifficulty = 3;
+    mainCardsLol.innerHTML ="";
+    const getLowDifficulty =  dataLolArray.filter((e)=>( e.info.difficulty <= rangeDifficulty));
+    bannerLol.style.display ="none";
+    mainSliderLol.style.display ="none";
+    const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
+    showChampions(showLowDifficulty);
 
-    //let dificultadBaja = Object.entries(dataLolArray);
-    //console.log(dificultadBaja[1][1]);
-    //dificultadBaja.forEach((element) => console.log(element));
-
-
-    //const holaa = showFilterByDifficulty(dataLolArray);
-    //console.log('dificultadBaja');
-    
-    
-    // const di =  dataLolArray.info.difficulty.value;
-    // if (di <=2){
-    //     showFilterByDifficulty(dataLolArray);
-    // }
-
+});
+moderateDifficulty.addEventListener("click",(e)=>{
+    e.preventDefault();
+    const rangeDifficulty = 3;
+    const rangeDifficulty2 = 6;
+    mainCardsLol.innerHTML ="";
+    const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty) && (e.info.difficulty <= rangeDifficulty2)));
+    bannerLol.style.display ="none";
+    mainSliderLol.style.display ="none";
+    const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
+    showChampions(showLowDifficulty);
+});
+highDifficulty.addEventListener("click",(e)=>{
+    const rangeDifficulty = 6;
+    mainCardsLol.innerHTML ="";
+    const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty)));
+    bannerLol.style.display ="none";
+    mainSliderLol.style.display ="none";
+    const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
+    showChampions(showLowDifficulty);
     
 });
 
@@ -358,7 +371,7 @@ const searchLolChampions = searchChampions.addEventListener("keyup", (e)=>{
     removeMenuLOl();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    const searchString = (e.target.value).toLowerCase();
+    const searchString = e.target.value;
     console.log(searchString);
     const searchChampionsLol = searchLol(dataLolArray,searchString);
     // console.log(filterLol);
@@ -366,38 +379,77 @@ const searchLolChampions = searchChampions.addEventListener("keyup", (e)=>{
 });
 
 //show all information about the champions
-
-
 document.body.addEventListener('click', (e) =>{
     e.preventDefault();
-    
-    if(e.target.classList == 'buttonInformation'){
-        // bannerLol.style.display ="none";
-        // mainSliderLol.style.display ="none";
-        mainContainer.innerHTML="";
-        console.log("hola");
-        // mainContainer
-        dataLolArray.forEach((data) => {
-            const otro = 'Aatrox';
 
-            if(data.id.includes(otro)){
-                const championsInformation = document.createElement('section');
-                const boxNameChampions = document.createElement('section');
-                championsInformation.setAttribute("class","championsInformation");
-                boxNameChampions.setAttribute("class","boxNameChampions");
-                const boxNameLol = `
-                <img src="${data.splash}">
-                <p>${data.title}</p>
-                <h1>${data.name}</h1>
-                `;
-                boxNameChampions.innerHTML=boxNameLol;
-                mainContainer.appendChild(championsInformation);
-                championsInformation.appendChild(boxNameChampions);
-            }
-            
-    })
+    if(e.target.classList == 'buttonInformation'){
+        // mainContainer.innerHTML="";
+        const idLol= e.target.id;
+        const findChampion = dataLolArray.find((champion)=>champion.id === idLol);
+        console.log(findChampion);
+        // const championsInformation = document.createElement('section');
+        // const boxNameChampions = document.createElement('section');
+        // championsInformation.setAttribute("class","championsInformation");
+        // boxNameChampions.setAttribute("class","boxNameChampions");
+        //modal
+        const divMyChampionModal = document.createElement('div');
+        const divModalChampionContent = document.createElement('div');
+        const divHeaderModal = document.createElement('div');
+        const spanCloseModal = document.createElement('span');
+        divMyChampionModal.setAttribute("id","myChampionModal");
+        divMyChampionModal.setAttribute("class","modalChampion");
+        divModalChampionContent.setAttribute("class","modalChampionContent");
+        // mainContainer.setAttribute("class","modalChampion");
+        divHeaderModal.setAttribute("class","headerModal");
+        spanCloseModal.setAttribute("class","closeModal");
+        spanCloseModal.textContent= "x";
+        const moreInformationChampion = `
+        
+                <div class="bodyModal">
+                    <img widht="200px" height="100px" src="${findChampion.splash}">
+                    <p>${findChampion.title}</p>
+                    <h1>${findChampion.name}</h1>
+                </div>
+           `;
+           divModalChampionContent.innerHTML=moreInformationChampion;
+        mainContainer.appendChild(divMyChampionModal);
+        divMyChampionModal.appendChild(divModalChampionContent);
+        divModalChampionContent.appendChild(divHeaderModal);
+        divHeaderModal.appendChild(spanCloseModal);
+        
+        
+        
+
+        // mainContainer.appendChild(championsInformation);
+        // championsInformation.appendChild(boxNameChampions);
+        const myChampionModal = document.querySelector("#myChampionModal");
+const buttonInformation = document.querySelector(".buttonInformation");
+const closeModal = document.querySelector(".closeModal");
+
+buttonInformation.addEventListener('click', function openModal(){
+    // myChampionModal.style.display="block";
+    myChampionModal.style.display="block"
+    console.log("hola");
+});
+
+closeModal.addEventListener('click',function closeModal(){
+    myChampionModal.style.display="none";
+});
+
+window.addEventListener('click', function outsideClick(e){
+    if(e.target == myChampionModal){
+        myChampionModal.style.display ="none";
     }
+});
+
+    }
+    
+
 })
+// modalChampion
+
+
+
 // document.body.addEventListener( 'click', function ( event ) {
 //     if( event.target.id == 'btnSubmit' ) {
 //       someFunc();
