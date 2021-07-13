@@ -14,6 +14,7 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
 }
 .menu {
   background-color: #202328;
@@ -165,7 +166,6 @@ footer {
   border-top: 4px solid #efb810;
   background-color: #202328;
   bottom: 0px;
-
   color: #fff;
   width: 100vw;
   text-align: center;
@@ -181,8 +181,6 @@ footer section {
 
 .showCardsLol {
   display: flex;
-  /* display: column; */
-
   padding: 0px;
   font-size: 30px;
   flex-direction: column;
@@ -200,7 +198,6 @@ footer section {
 }
 .showCardsLol img {
   width: 294px;
-
   border-radius: 30px 30px 0 0;
 }
 .showCardsLol p {
@@ -212,7 +209,6 @@ footer section {
   width: 300px;
   height: 250px;
   margin: 20px;
-
   position: relative;
   /* perspective: 1000px; */
 }
@@ -262,17 +258,77 @@ th {
 .infoChampions tr:first-child {
   color: #efb810;
 }
+/* modal champion */
 .buttonInformation {
   width: 40%;
   background: #efb810;
   padding: 5px;
+  border: 0;
   border-radius: 5px;
   font-size: 18px;
   color: #212224;
   cursor: pointer;
   font-weight: bold;
 }
-
+.buttonInformation:hover {
+  background: #b38a0f;
+  color: #fff;
+}
+.modalChampion {
+  /* display: none; */
+  z-index: 2;
+  position: fixed;
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.modalChampionContent {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  /* animation-name: openModal; */
+  animation-duration: 1s;
+}
+.headerModal {
+  background: pink;
+  padding: 30px;
+  /* color: black; */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bodyModal {
+  padding: 10px 20px;
+  background: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+span:hover {
+  border-radius: 10px;
+  background: bisque;
+}
+.closeModal {
+  color: blue;
+  float: right;
+  font-size: 30px;
+  padding: 0;
+}
+.closeModal:hover,
+.closeModal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* @keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
 /* main */
 main {
   padding-top: 100px;
@@ -401,3 +457,6 @@ main .mainCardsLol {
   }
 }
 /* img:hover{ transform: scale(2) } */
+.notFoundLol {
+  margin-top: 300px;
+}
