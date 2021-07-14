@@ -383,76 +383,57 @@ document.body.addEventListener('click', (e) =>{
     e.preventDefault();
 
     if(e.target.classList == 'buttonInformation'){
-        // mainContainer.innerHTML="";
         const idLol= e.target.id;
+
         const findChampion = dataLolArray.find((champion)=>champion.id === idLol);
+
         console.log(findChampion);
-        // const championsInformation = document.createElement('section');
-        // const boxNameChampions = document.createElement('section');
-        // championsInformation.setAttribute("class","championsInformation");
-        // boxNameChampions.setAttribute("class","boxNameChampions");
-        //modal
+
         const divMyChampionModal = document.createElement('div');
         const divModalChampionContent = document.createElement('div');
         const divHeaderModal = document.createElement('div');
         const spanCloseModal = document.createElement('span');
+        const divBodyModal = document.createElement('div')
         divMyChampionModal.setAttribute("id","myChampionModal");
         divMyChampionModal.setAttribute("class","modalChampion");
         divModalChampionContent.setAttribute("class","modalChampionContent");
-        // mainContainer.setAttribute("class","modalChampion");
         divHeaderModal.setAttribute("class","headerModal");
+        divBodyModal.setAttribute("class","bodyModal");
         spanCloseModal.setAttribute("class","closeModal");
+
         spanCloseModal.textContent= "x";
+
+        divHeaderModal.textContent= "Champions";
+
         const moreInformationChampion = `
-        
-                <div class="bodyModal">
-                    <img widht="200px" height="100px" src="${findChampion.splash}">
-                    <p>${findChampion.title}</p>
-                    <h1>${findChampion.name}</h1>
-                </div>
+                    <div class="boxChampion">
+                        <img src="${findChampion.splash}">
+                    </div>
+
+                    <div class="blurbInformation">
+                        <div class ="titleChampion">
+                            <p>${findChampion.title}</p>
+                            <h1>${findChampion.name}</h1>
+                        </div>
+                        <div class ="informationChampion">
+                            <p>${findChampion.blurb}</p>
+                            <p>ROLE<br>${findChampion.tags}</p>
+                        </div>
+                    </div>
+                    
            `;
-           divModalChampionContent.innerHTML=moreInformationChampion;
+        divBodyModal.innerHTML=moreInformationChampion;
         mainContainer.appendChild(divMyChampionModal);
         divMyChampionModal.appendChild(divModalChampionContent);
         divModalChampionContent.appendChild(divHeaderModal);
         divHeaderModal.appendChild(spanCloseModal);
-        
-        
-        
+        divModalChampionContent.appendChild(divBodyModal);
+        const closeModal = document.querySelector(".closeModal");
 
-        // mainContainer.appendChild(championsInformation);
-        // championsInformation.appendChild(boxNameChampions);
-        const myChampionModal = document.querySelector("#myChampionModal");
-const buttonInformation = document.querySelector(".buttonInformation");
-const closeModal = document.querySelector(".closeModal");
-
-buttonInformation.addEventListener('click', function openModal(){
-    // myChampionModal.style.display="block";
-    myChampionModal.style.display="block"
-    console.log("hola");
-});
-
-closeModal.addEventListener('click',function closeModal(){
-    myChampionModal.style.display="none";
-});
-
-window.addEventListener('click', function outsideClick(e){
-    if(e.target == myChampionModal){
-        myChampionModal.style.display ="none";
+        closeModal.addEventListener('click',function closeModal(){
+            divMyChampionModal.remove('myChampionModal');
+        });
     }
-});
-
-    }
-    
-
 })
-// modalChampion
 
-
-
-// document.body.addEventListener( 'click', function ( event ) {
-//     if( event.target.id == 'btnSubmit' ) {
-//       someFunc();
-//     };
-//   } );
 

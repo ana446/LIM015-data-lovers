@@ -308,12 +308,13 @@ th {
   background: #b38a0f;
   color: #fff;
 }
+
 .modalChampion {
-  /* display: none; */
+  /*display: block;*/
   z-index: 2;
   position: fixed;
-  overflow: auto;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  /*overflow: auto;*/
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
   left: 0;
@@ -327,27 +328,50 @@ th {
   animation-duration: 1s;
 }
 .headerModal {
-  background: pink;
-  padding: 30px;
-  /* color: black; */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  background: #efb810;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
 }
 .bodyModal {
   padding: 10px 20px;
   background: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+}
+.bodyModal img{
+  width: 230px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px #afb1b7;
+  object-fit: cover;
+}
+.bodyModal h1{
+  font-size: 48px;
+  text-shadow: 3px 3px 0 #F2BAC5;
+}
+.bodyModal p {
+  font-size: 24px;
 }
 span:hover {
-  border-radius: 10px;
-  background: bisque;
+  border-top-right-radius: 30px;
+  color: #202328;
+  background: #AFB1B7;
 }
 .closeModal {
-  color: blue;
-  float: right;
-  font-size: 30px;
-  padding: 0;
+  color:#ffff;
+  font-size: 24px;
+  background: #202328;
+  padding: 10px;
+  border-top-right-radius: 30px;
 }
 .closeModal:hover,
 .closeModal:focus {
@@ -355,6 +379,27 @@ span:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.blurbInformation {
+  padding-left: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /*border-left: 2px solid #efb810;*/
+}
+.informationChampion p{
+  text-align: justify;
+  font-size: 16px;
+  line-height: 130%;
+  padding-right: 25px;
+}
+
+.informationChampion {
+  display: flex;
+  padding-top: 20px;
+}
+
 /* @keyframes openModal {
   from {
     opacity: 0;
