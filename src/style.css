@@ -307,12 +307,21 @@ th {
   background: #b38a0f;
   color: #fff;
 }
+
 .modalChampion {
+<<<<<<< HEAD
   /* display: none; */
   z-index: 1;
   position: fixed;
 
   /* background-color: rgba(0, 0, 0, 0.5); */
+=======
+  /*display: block;*/
+  z-index: 2;
+  position: fixed;
+  /*overflow: auto;*/
+  background-color: rgba(0, 0, 0, 0.5);
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
   height: 100%;
   width: 100%;
   left: 0;
@@ -327,7 +336,10 @@ th {
 }
 .headerModal {
   background: #efb810;
+<<<<<<< HEAD
   padding-left: 10px;
+=======
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   font-size: 24px;
@@ -335,12 +347,17 @@ th {
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
+=======
+  padding-left: 20px;
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
 }
 .bodyModal {
   padding: 10px 20px;
   background: #fff;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+<<<<<<< HEAD
   height: 400px;
   /* overflow: auto; */
   /* overflow-y: scroll; */
@@ -355,11 +372,30 @@ th {
   text-shadow: 3px 3px 0 #efb810;
 }
 .bobyMod p {
+=======
+  height: 340px;
+  display: flex;
+  align-items: center;
+}
+.bodyModal img{
+  width: 230px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px #afb1b7;
+  object-fit: cover;
+}
+.bodyModal h1{
+  font-size: 48px;
+  text-shadow: 3px 3px 0 #F2BAC5;
+}
+.bodyModal p {
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
   font-size: 24px;
 }
 span:hover {
   border-top-right-radius: 30px;
   color: #202328;
+<<<<<<< HEAD
   background: #afb1b7;
 }
 .closeModal {
@@ -367,6 +403,15 @@ span:hover {
   font-size: 24px;
   padding: 10px;
   background: #202328;
+=======
+  background: #AFB1B7;
+}
+.closeModal {
+  color:#ffff;
+  font-size: 24px;
+  background: #202328;
+  padding: 10px;
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
   border-top-right-radius: 30px;
 }
 .closeModal:hover,
@@ -375,15 +420,22 @@ span:hover {
   text-decoration: none;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .blurbInformation {
   display: flex;
 }
 .blurbInformation div {
   padding-left: 50px;
+=======
+
+.blurbInformation {
+  padding-left: 10px;
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   border-left: 2px solid #efb810;
 }
 .blurbInformation p:first-child {
@@ -392,6 +444,22 @@ span:hover {
   line-height: 150%;
   padding-right: 50px;
 }
+=======
+  /*border-left: 2px solid #efb810;*/
+}
+.informationChampion p{
+  text-align: justify;
+  font-size: 16px;
+  line-height: 130%;
+  padding-right: 25px;
+}
+
+.informationChampion {
+  display: flex;
+  padding-top: 20px;
+}
+
+>>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
 /* @keyframes openModal {
   from {
     opacity: 0;
