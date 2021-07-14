@@ -396,25 +396,32 @@ document.body.addEventListener('click', (e) =>{
         const divModalChampionContent = document.createElement('div');
         const divHeaderModal = document.createElement('div');
         const spanCloseModal = document.createElement('span');
+        const divBodyModal = document.createElement('div');
         divMyChampionModal.setAttribute("id","myChampionModal");
         divMyChampionModal.setAttribute("class","modalChampion");
         divModalChampionContent.setAttribute("class","modalChampionContent");
-        // mainContainer.setAttribute("class","modalChampion");
         divHeaderModal.setAttribute("class","headerModal");
         spanCloseModal.setAttribute("class","closeModal");
+        divBodyModal.setAttribute("class","bodyModal");
         spanCloseModal.textContent= "x";
+        divHeaderModal.textContent="Champion";
         const moreInformationChampion = `
-        
-                <div class="bodyModal">
-                    <img widht="200px" height="100px" src="${findChampion.splash}">
-                    <p>${findChampion.title}</p>
-                    <h1>${findChampion.name}</h1>
+            <img src="${findChampion.splash}">
+            <h1>${findChampion.name}</h1>
+            <p>${findChampion.title}</p>
+            <div class="blurbInformation">
+                <p>${findChampion.blurb}</p>
+                <div>
+                    <p>ROLE</p>
+                    <p>${findChampion.tags}</>
                 </div>
-           `;
-           divModalChampionContent.innerHTML=moreInformationChampion;
+            </div>
+             `;
+        divBodyModal.innerHTML=moreInformationChampion;
         mainContainer.appendChild(divMyChampionModal);
         divMyChampionModal.appendChild(divModalChampionContent);
         divModalChampionContent.appendChild(divHeaderModal);
+        divModalChampionContent.appendChild(divBodyModal);
         divHeaderModal.appendChild(spanCloseModal);
         
         
@@ -423,26 +430,20 @@ document.body.addEventListener('click', (e) =>{
         // mainContainer.appendChild(championsInformation);
         // championsInformation.appendChild(boxNameChampions);
         const myChampionModal = document.querySelector("#myChampionModal");
-const buttonInformation = document.querySelector(".buttonInformation");
-const closeModal = document.querySelector(".closeModal");
+        const buttonInformation = document.querySelector(".buttonInformation");
+        const closeModal = document.querySelector(".closeModal");
 
-buttonInformation.addEventListener('click', function openModal(){
-    // myChampionModal.style.display="block";
-    myChampionModal.style.display="block"
-    console.log("hola");
-});
-
-closeModal.addEventListener('click',function closeModal(){
-    myChampionModal.style.display="none";
-});
-
-window.addEventListener('click', function outsideClick(e){
-    if(e.target == myChampionModal){
-        myChampionModal.style.display ="none";
-    }
-});
+               document.body.addEventListener('click',function closeModal(z){
+                
+                divMyChampionModal.remove("div");
+                
+            });
+        
 
     }
+    // if (e.target.classList == 'closeModal'){
+            
+    //     }
     
 
 })
