@@ -1,6 +1,6 @@
 // import { example } from './data.js';
 import champions from './data/lol/lol.js';
-import {showFilterRols , showFilterByDifficulty , searchLol } from  './data.js';
+import {showFilterRols , showFilterByDifficulty , searchLol , orderByAlphabeticalAZ ,orderByAlphabeticalZA } from  './data.js';
 
 const dataLolArray = Object.values(champions.data);
 const menuItems = document.querySelector('.menuItems');
@@ -21,9 +21,22 @@ const removeMenuLOl = () => menuItems.classList.remove('show');
 
 //show slider and banner
 const mainSliderLol = document.querySelector(".mainSliderLol");
-const bannerLol = document.querySelector(".bannerLol")
+const bannerLol = document.querySelector(".bannerLol");
+const orderChampionsLol = document.querySelector("#orderChampionsLol");
+
 function showSliderLol() {
-    const sliderLolLogo = `<img src="images/fondobaner.jpg">`;
+    orderChampionsLol.style.display="none";
+    const sliderLolLogo = `
+    <article>
+        <img src="images/league-of-legends.png"></img>
+        <h1 class= "videoText" >DISCOVER YOUR CHAMPION</h1>
+    </article>
+    <video autoplay muted loop playsinline preload="metadata">
+	  <source src="video/lolVideo.webm" type="video/webm">
+    </video>
+    
+    `;
+    // <img src="images/fondobaner.jpg"></img>
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainCardsLol.innerHTML = "";
     mainSliderLol.innerHTML = sliderLolLogo;
@@ -32,20 +45,20 @@ function showSliderLol() {
     //cardsRoles.setAttribute('id','mainCardsLol');
     const boxCardsRoles = `
         <section id="cardAssassins" class="boxCardsRoles">
-        <img src="images/cards-asesinos.jpg">
-        <p class="nameLol"><img src="images/assessin_icon.png">Assassins</p>
+            <img src="images/cards-asesinos.jpg">
+            <p class="nameLol"><img src="images/assessin_icon.png">Assassins</p>
         </section>
         <section id="cardFighters" class="boxCardsRoles">
-        <img src="images/cards-luchadores.jpg">
-        <p class="nameLol"><img src="images/Fighter_icon.png">Fighters</p>
+            <img src="images/cards-luchadores.jpg">
+            <p class="nameLol"><img src="images/Fighter_icon.png">Fighters</p>
         </section>
         <section id="cardMages" class="boxCardsRoles">
-        <img src="images/cards-magos.jpg">
-        <p class="nameLol"><img src="images/mage_icon.png">Mages</p>
+            <img src="images/cards-magos.jpg">
+            <p class="nameLol"><img src="images/mage_icon.png">Mages</p>
         </section>
         <section id="cardMarksmen" class="boxCardsRoles">
-        <img src="images/cards-tiradores.jpg">
-        <p class="nameLol"><img src="images/marksman_icon.png">Marksmen</p>
+            <img src="images/cards-tiradores.jpg">
+            <p class="nameLol"><img src="images/marksman_icon.png">Marksmen</p>
         </section>
         <section id="cardSupports" class="boxCardsRoles">
         <img src="images/cards-apoyos.jpg">
@@ -60,6 +73,7 @@ function showSliderLol() {
 
 }
 showSliderLol();
+
 
 //show roles filter - landingpage
 const cardAssassinsLol = document.querySelector('#cardAssassins');
@@ -151,8 +165,8 @@ function reloadPage(){
         showCardsLol.appendChild(backOfCardsLol);
         backOfCardsLol.appendChild(buttonInformation);       
 
-    });
-};
+    })
+}
 //showChampions(dataLolArray);
 
 //show the champions/ menu-all
@@ -161,9 +175,20 @@ allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    orderChampionsLol.style.display="block";
     mainCardsLol.innerHTML="";
-    
     removeMenuLOl();
+    // const selectOrderAlphabet =  document.createElement("button");
+    // selectOrderAlphabet.setAttribute("class","orderAlphabetical");
+    // selectOrderAlphabet.textContent="Z-A";
+    // //  <option value="AZ">A-Z</option>
+    // // <option value="ZA">Z-A</option>
+    // // `;
+    // const labelOrder=`
+    // <label for="orderAlphabetic" >order Alphabetic</label>
+    // `;
+    // // selectOrderAlphabet.innerHTML = divOrder;
+    
     const nameRol =
     ` 
     <img src="./images/assessin_icon.png">
@@ -174,6 +199,8 @@ allChampion.addEventListener('click', (e) => {
     <img src="./images/tank_icon.png">
     `; 
     sectionElementRol.innerHTML = nameRol;
+    // sectionElementRol.innerHTML = labelOrder;
+    // sectionElementRol.appendChild(selectOrderAlphabet);
     showChampions(dataLolArray);
 })
 
@@ -191,9 +218,10 @@ const filterbyAssassins = () => {
     removeMenuLOl();
     if (roles === "Assassin") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/assessin_icon.png">
@@ -210,9 +238,10 @@ const filterbyFighters = () => {
     removeMenuLOl();
     if (roles === "Fighter") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/Fighter_icon.png">
@@ -229,9 +258,10 @@ const filterbyMages = () => {
     removeMenuLOl();
     if (roles === "Mage") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/mage_icon.png">
@@ -248,9 +278,10 @@ const filterbyMarksmen = () => {
     removeMenuLOl();
     if (roles === "Marksman") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/marksman_icon.png">
@@ -267,9 +298,10 @@ const filterbySupports = () => {
     removeMenuLOl();
     if (roles === "Support") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/support_icon.png">
@@ -286,16 +318,17 @@ const filterbyTanks = () => {
     removeMenuLOl();
     if (roles === "Tank") {
         let filtroRols = showFilterRols(dataLolArray,roles);
-        console.log(filtroRols);
+        // console.log(filtroRols);
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
+        orderChampionsLol.style.display="none";
         const nameRol = 
         ` 
         <img src="./images/tank_icon.png">
         <p>TANKS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
-        const tanksRole = showChampions(filtroRols);
+        showChampions(filtroRols);
     }
 }
 
@@ -336,8 +369,12 @@ lowDifficulty.addEventListener("click",(e)=>{
     const getLowDifficulty =  dataLolArray.filter((e)=>( e.info.difficulty <= rangeDifficulty));
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    orderChampionsLol.style.display="none";
+    sectionElementRol.innerHTML="";
+    
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
+    
 
 });
 moderateDifficulty.addEventListener("click",(e)=>{
@@ -348,31 +385,57 @@ moderateDifficulty.addEventListener("click",(e)=>{
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty) && (e.info.difficulty <= rangeDifficulty2)));
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    sectionElementRol.style.display ="none";
+    orderChampionsLol.style.display="none";
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
+    
 });
-highDifficulty.addEventListener("click",(e)=>{
+highDifficulty.addEventListener("click",()=>{
     const rangeDifficulty = 6;
     mainCardsLol.innerHTML ="";
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty)));
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+    sectionElementRol.style.display ="none";
+    orderChampionsLol.style.display="none";
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
     
 });
 
-//search champions
+// order AZ ZA
+const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
+console.log(alphabeticalOrder);
+alphabeticalOrder.addEventListener('change', (e)=>{
+    e.preventDefault();
+    const optionSelect = e.target.value;
+
+    console.log(optionSelect);
+    if(optionSelect == 'ZA' ){
+        mainCardsLol.innerHTML="";
+        const getOrderAlphabeticalZA  = orderByAlphabeticalZA(dataLolArray);
+        showChampions(getOrderAlphabeticalZA);
+    }
+    if(optionSelect == 'AZ'){
+        mainCardsLol.innerHTML = "";
+        const getOrderAlphabeticalAZ = orderByAlphabeticalAZ(dataLolArray);
+        showChampions(getOrderAlphabeticalAZ);
+    }
+    
+});
+// search champions
+
 const searchChampions = document.querySelector("#searchChampions");
 
-const searchLolChampions = searchChampions.addEventListener("keyup", (e)=>{
+searchChampions.addEventListener("keyup", (e)=>{
     e.preventDefault();
     mainCardsLol.innerHTML="";
     removeMenuLOl();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
     const searchString = e.target.value;
-    console.log(searchString);
+    // console.log(searchString);
     const searchChampionsLol = searchLol(dataLolArray,searchString);
     // console.log(filterLol);
     showChampions(searchChampionsLol);
@@ -384,48 +447,22 @@ document.body.addEventListener('click', (e) =>{
 
     if(e.target.classList == 'buttonInformation'){
         const idLol= e.target.id;
-
+        
         const findChampion = dataLolArray.find((champion)=>champion.id === idLol);
-
-        console.log(findChampion);
-
+       // console.log(findChampion);
         const divMyChampionModal = document.createElement('div');
         const divModalChampionContent = document.createElement('div');
         const divHeaderModal = document.createElement('div');
         const spanCloseModal = document.createElement('span');
-<<<<<<< HEAD
         const divBodyModal = document.createElement('div');
-=======
-        const divBodyModal = document.createElement('div')
->>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
         divMyChampionModal.setAttribute("id","myChampionModal");
         divMyChampionModal.setAttribute("class","modalChampion");
         divModalChampionContent.setAttribute("class","modalChampionContent");
         divHeaderModal.setAttribute("class","headerModal");
         divBodyModal.setAttribute("class","bodyModal");
         spanCloseModal.setAttribute("class","closeModal");
-<<<<<<< HEAD
-        divBodyModal.setAttribute("class","bodyModal");
         spanCloseModal.textContent= "x";
-        divHeaderModal.textContent="Champion";
-        const moreInformationChampion = `
-            <img src="${findChampion.splash}">
-            <h1>${findChampion.name}</h1>
-            <p>${findChampion.title}</p>
-            <div class="blurbInformation">
-                <p>${findChampion.blurb}</p>
-                <div>
-                    <p>ROLE</p>
-                    <p>${findChampion.tags}</>
-                </div>
-            </div>
-             `;
-=======
-
-        spanCloseModal.textContent= "x";
-
         divHeaderModal.textContent= "Champions";
-
         const moreInformationChampion = `
                     <div class="boxChampion">
                         <img src="${findChampion.splash}">
@@ -441,40 +478,13 @@ document.body.addEventListener('click', (e) =>{
                             <p>ROLE<br>${findChampion.tags}</p>
                         </div>
                     </div>
-                    
            `;
->>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
         divBodyModal.innerHTML=moreInformationChampion;
         mainContainer.appendChild(divMyChampionModal);
         divMyChampionModal.appendChild(divModalChampionContent);
         divModalChampionContent.appendChild(divHeaderModal);
         divModalChampionContent.appendChild(divBodyModal);
         divHeaderModal.appendChild(spanCloseModal);
-<<<<<<< HEAD
-        
-        
-        
-
-        // mainContainer.appendChild(championsInformation);
-        // championsInformation.appendChild(boxNameChampions);
-        const myChampionModal = document.querySelector("#myChampionModal");
-        const buttonInformation = document.querySelector(".buttonInformation");
-        const closeModal = document.querySelector(".closeModal");
-
-               document.body.addEventListener('click',function closeModal(z){
-                
-                divMyChampionModal.remove("div");
-                
-            });
-        
-
-    }
-    // if (e.target.classList == 'closeModal'){
-            
-    //     }
-    
-
-=======
         divModalChampionContent.appendChild(divBodyModal);
         const closeModal = document.querySelector(".closeModal");
 
@@ -482,7 +492,8 @@ document.body.addEventListener('click', (e) =>{
             divMyChampionModal.remove('myChampionModal');
         });
     }
->>>>>>> a94b0c9a990464d5f2c8e2872dc58c9320eb3aac
 })
+
+
 
 
