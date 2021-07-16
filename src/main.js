@@ -175,7 +175,33 @@ allChampion.addEventListener('click', (e) => {
     `; 
     sectionElementRol.innerHTML = nameRol;
     showChampions(dataLolArray);
-})
+
+    
+        /********** texto de filtrado ***********/
+        const mayormenor = 
+        ` 
+            <h2 id="mayor">Ascendente</h2> 
+            <h2 id="menor">Descendente</h2> 
+        `; 
+        sectionElementRol.innerHTML = mayormenor;
+    
+        /****** ascendente *******/
+        const mayorAs = document.querySelector("#mayor");
+        mayorAs.addEventListener("click", () => {
+            e.preventDefault();
+
+            dataLolArray.forEach ( (value) => {
+                const soloDifficulty = value.info.difficulty;
+                const numeros = [soloDifficulty];
+                numeros.sort((a,b) => b.numeros - a.numeros);
+                console.log(numeros);
+            })
+        }
+        );
+        /****** descendente *******/
+
+        /****** *******/
+});
 
 //filterByRole
 const assassinRols = document.querySelector('.assassinRols');
@@ -333,13 +359,20 @@ lowDifficulty.addEventListener("click",(e)=>{
     e.preventDefault();
     const rangeDifficulty = 3;
     mainCardsLol.innerHTML ="";
+
     const getLowDifficulty =  dataLolArray.filter((e)=>( e.info.difficulty <= rangeDifficulty));
+
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
+
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
+
     showChampions(showLowDifficulty);
+    
 
 });
+
+
 moderateDifficulty.addEventListener("click",(e)=>{
     e.preventDefault();
     const rangeDifficulty = 3;
@@ -433,7 +466,6 @@ document.body.addEventListener('click', (e) =>{
         closeModal.addEventListener('click',function closeModal(){
             divMyChampionModal.remove('myChampionModal');
         });
-    }
+
+        }
 })
-
-
