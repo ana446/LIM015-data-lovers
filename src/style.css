@@ -258,7 +258,7 @@ footer section {
 }
 .infoChampions td,
 th {
-  background-color: #333436;/**/
+  background-color: #333436; /**/
   width: 110px;
   padding: 5px;
   /* text-transform: uppercase; */
@@ -387,7 +387,6 @@ span:hover {
 main {
   padding-top: 100px;
   text-align: center;
-
 }
 .mainSliderLol {
   align-items: center;
@@ -457,40 +456,38 @@ main .mainCardsLol {
   margin: 50px;
   border-collapse: collapse;
 }
-.championsStatsTable thead{
+.championsStatsTable thead {
   /*table-layout: fixed;*/
   /*background: #202328 !important;
   width: 500px;*/
   text-shadow: 0px 3px 3px #109fef;
 }
 
-#tablebody{
+#tablebody {
   /*overflow: auto;
   display: block;
   height: 300px;
   width: 500px;*/
-  
 }
-#tablebody tr{
+#tablebody tr {
   /*display: block;*/
   border-bottom: 1px solid #fff;
 }
-#tablebody td{
+#tablebody td {
   /*float: left;*/
   padding: 10px 5px 10px 5px;
 }
-.championsStatsTable thead tr{
+.championsStatsTable thead tr {
   /*display: block;
   position: relative;*/
-  
 }
-.championsStatsTable td:nth-child(2){
+.championsStatsTable td:nth-child(2) {
   /*display: block;
   position: relative;*/
   color: #efb810;
 }
 
-.championsStatsTable thead tr th{
+.championsStatsTable thead tr th {
   /*float: left;*/
   padding: 15px 5px 15px 5px;
 }
@@ -607,10 +604,6 @@ article img {
 }
 .videoText {
   position: absolute;
-<<<<<<< HEAD
-  /* top: 80%; */
-=======
->>>>>>> 5465824fc47d701268462a2c247b6a20e6a5bbee
   width: 100%;
   font-size: 50px;
   letter-spacing: 3px;

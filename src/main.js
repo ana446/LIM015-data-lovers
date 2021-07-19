@@ -36,13 +36,10 @@ function showSliderLol() {
     </video>
     
     `;
-    // <img src="images/fondobaner.jpg"></img>
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainCardsLol.innerHTML = "";
     mainSliderLol.innerHTML = sliderLolLogo;
     bannerLol.innerHTML = bannerLolText;
-    //const cardsRoles = createElement('section');
-    //cardsRoles.setAttribute('id','mainCardsLol');
     const boxCardsRoles = `
         <section id="cardAssassins" class="boxCardsRoles">
             <img src="images/cards-asesinos.jpg">
@@ -213,7 +210,7 @@ const filterbyAssassins = () => {
         const nameRol = 
         `<div>
             <img src="./images/assessin_icon.png">
-            <p>ASSESSINS </p>
+            <p>ASSASSINS </p>
         </div>
         <div>
             <span> Hay${numberOfChampions} </span>
@@ -234,13 +231,15 @@ const filterbyFighters = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
         ` 
         <img src="./images/Fighter_icon.png">
         <p> FIGHTERS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
-        console.log(filtroRols.length);
+        
         showChampions(filtroRols);
     }
 }
@@ -255,6 +254,8 @@ const filterbyMages = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
         ` 
         <img src="./images/mage_icon.png">
@@ -275,6 +276,8 @@ const filterbyMarksmen = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
         ` 
         <img src="./images/marksman_icon.png">
@@ -295,6 +298,8 @@ const filterbySupports = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
         ` 
         <img src="./images/support_icon.png">
@@ -315,6 +320,8 @@ const filterbyTanks = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
         ` 
         <img src="./images/tank_icon.png">
@@ -399,11 +406,7 @@ highDifficulty.addEventListener("click",()=>{
 
 // order AZ ZA
 const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
-<<<<<<< HEAD
 // console.log(alphabeticalOrder);
-=======
-//console.log(alphabeticalOrder);
->>>>>>> 5465824fc47d701268462a2c247b6a20e6a5bbee
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
@@ -490,14 +493,8 @@ document.body.addEventListener('click', (e) =>{
     }
 })
 
-<<<<<<< HEAD
-//stats data
-
-
-=======
 // champions stat
 const championsStat = document.querySelector("#championsStat");
->>>>>>> 5465824fc47d701268462a2c247b6a20e6a5bbee
 
 championsStat.addEventListener( 'click', (e) => {
     e.preventDefault();
