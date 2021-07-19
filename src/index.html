@@ -24,7 +24,7 @@
           <li class="allChampion"><a href="">ALL</a></li>
           <li class="subMenuItems"><a >Roles  </a> 
             <ul class="subMenu"   >
-            <li class="assassinRols"><a  href="">ASSESSINS</a></li>
+            <li class="assassinRols"><a  href="">ASSASSINS</a></li>
             <li class="fighterRols"><a href="">FIGHTERS</a></li>
             <li class="mageRols"><a href="">MAGES</a></li>
             <li class="marksmanRols"><a href="">MARKSMEN</a></li>
@@ -67,10 +67,39 @@
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
         </select>
-        <div class="searchLol"><a href="">SEARCH</a><input type="search" id="searchChampions" placeholder="search"></div>
+        <div class="searchLol"><label>SEARCH</label><input type="search" id="searchChampions" placeholder="search"></div>
       </section>
       <!-- agregando para tabla-->
       <section id="tableStats">
+
+        <table class="championsPercentageTable">
+          <thead>
+            <tr>
+              <th>CHAMPIONS</th>
+              <th>AVERAGE (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <select name="" id="percentageChampions">
+                  <option value="">ROLE</option>
+                  <option value="Assassin">ASSASSINS</option>
+                  <option value="Fighter">FIGHTERS</option>
+                  <option value="Mage">MAGES</option>
+                  <option value="Marksman">MARKSMAN</option>
+                  <option value="Support">SUPPORTS</option>
+                  <option value="Tank">TANKS</option>
+                </select>
+              </td>
+              <td id="tdPorcentaje">
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
         <table class="championsStatsTable">
           <thead>
               <tr>
