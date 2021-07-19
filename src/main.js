@@ -1,6 +1,6 @@
 // import { example } from './data.js';
 import champions from './data/lol/lol.js';
-import {showFilterRols , showFilterByDifficulty , searchLol , orderByAlphabeticalAZ ,orderByAlphabeticalZA } from  './data.js';
+import {averageLol, showFilterRols , showFilterByDifficulty , searchLol , orderByAlphabeticalAZ ,orderByAlphabeticalZA } from  './data.js';
 
 const dataLolArray = Object.values(champions.data);
 const menuItems = document.querySelector('.menuItems');
@@ -164,6 +164,67 @@ function reloadPage(){
     location.reload();
 }
 
+<<<<<<< HEAD
+=======
+
+// show all champions- landing page
+ function showChampions (dataLolArray)  {
+     dataLolArray.forEach((e) => {
+        
+        const boxCardsLol = document.createElement("section");
+        const showCardsLol = document.createElement("section");
+        const faceCardsLol = document.createElement("section");
+        const backOfCardsLol = document.createElement("section");
+        const buttonInformation = document.createElement("button")
+        boxCardsLol.setAttribute("class", "boxCardsLol");
+        showCardsLol.setAttribute("class","showCardsLol");
+        faceCardsLol.setAttribute("class","faceCardsLol");
+        backOfCardsLol.setAttribute("class","backOfCardsLol");
+        buttonInformation.setAttribute("class","buttonInformation");
+        buttonInformation.setAttribute("id", e.id);
+        buttonInformation.textContent="More";
+        const nameChampion = 
+        ` 
+        <img src="${e.splash}">
+        <p class="nameLol"> ${e.name}</p>
+        `; 
+        const  infoChampions = `
+        <table class= "infoChampions">
+            <tr>
+                <th colspan="2">INFORMATION </th>
+            </tr>
+            <tr>
+                <th>Attack</th>
+                <td>${e.info.attack}</td>
+            </tr>
+            <tr>
+                <th>Defense</th>
+                <td>${e.info.defense}</td>
+            </tr>
+            <tr>
+                <th>Magic</th>
+                <td>${e.info.magic}</td>
+            </tr>
+            <tr>
+                <th>Difficulty</th>
+                <td>${e.info.difficulty}</td>
+            </tr>
+        </table>
+        
+        `;
+        // const <button class="buttonInformation"> More</button>
+        faceCardsLol.innerHTML = nameChampion;
+        backOfCardsLol.innerHTML = infoChampions;
+        mainCardsLol.appendChild(boxCardsLol);
+        boxCardsLol.appendChild(showCardsLol); 
+        showCardsLol.appendChild(faceCardsLol);
+        showCardsLol.appendChild(backOfCardsLol);
+        backOfCardsLol.appendChild(buttonInformation);       
+
+    })
+}
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
 //show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
 allChampion.addEventListener('click', (e) => {
@@ -173,15 +234,25 @@ allChampion.addEventListener('click', (e) => {
     // orderChampionsLol.style.display="block";
     orderChampionsLol.style.display="flex";
     mainCardsLol.innerHTML="";
+    tableStats.style.display = "none";
+    orderChampionsLol.style.display = "flex";
+    sectionElementRol.style.display = "block";
+    mainCardsLol.style.display = "flex";
     removeMenuLOl();
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
     const nameRol =
     ` 
+    <div>
     <img src="./images/assessin_icon.png">
     <img src="./images/Fighter_icon.png">
     <img src="./images/mage_icon.png">
     <img src="./images/marksman_icon.png">
     <img src="./images/support_icon.png">
     <img src="./images/tank_icon.png">
+    </div>
     `; 
     sectionElementRol.innerHTML = nameRol;
     showChampions(dataLolArray);
@@ -195,6 +266,7 @@ const marksmanRols = document.querySelector('.marksmanRols');
 const supportRols = document.querySelector('.supportRols');
 const tankRols = document.querySelector('.tankRols');
 const sectionElementRol = document.querySelector(".sectionElementRol")
+
 const filterbyAssassins = () => {
     const roles = "Assassin";
     mainCardsLol.innerHTML="";
@@ -205,6 +277,7 @@ const filterbyAssassins = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+<<<<<<< HEAD
         const numberOfChampions = filtroRols.length;
         console.log(numberOfChampions);
         const nameRol = 
@@ -214,6 +287,21 @@ const filterbyAssassins = () => {
         </div>
         <div>
             <span> Hay${numberOfChampions} </span>
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+        const numberOfChampions = filtroRols.length;
+
+        const nameRol = 
+        `
+        <div> 
+        <img src="./images/assessin_icon.png">
+        <p>ASSASSINS</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
@@ -232,11 +320,23 @@ const filterbyFighters = () => {
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
         const numberOfChampions = filtroRols.length;
+<<<<<<< HEAD
         console.log(numberOfChampions);
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         const nameRol = 
-        ` 
+        `
+        <div> 
         <img src="./images/Fighter_icon.png">
-        <p> FIGHTERS</p>
+        <p>FIGHTERS</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         
@@ -255,11 +355,23 @@ const filterbyMages = () => {
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
         const numberOfChampions = filtroRols.length;
+<<<<<<< HEAD
         console.log(numberOfChampions);
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         const nameRol = 
-        ` 
+        `
+        <div> 
         <img src="./images/mage_icon.png">
-        <p> MAGES</p>
+        <p>MAGES</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -277,11 +389,23 @@ const filterbyMarksmen = () => {
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
         const numberOfChampions = filtroRols.length;
+<<<<<<< HEAD
         console.log(numberOfChampions);
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         const nameRol = 
-        ` 
+        `
+        <div> 
         <img src="./images/marksman_icon.png">
-        <p>MARKSMEN</p>
+        <p>MARKSMAN</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -299,11 +423,23 @@ const filterbySupports = () => {
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
         const numberOfChampions = filtroRols.length;
+<<<<<<< HEAD
         console.log(numberOfChampions);
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         const nameRol = 
-        ` 
+        `
+        <div> 
         <img src="./images/support_icon.png">
         <p>SUPPORTS</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -321,11 +457,23 @@ const filterbyTanks = () => {
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
         const numberOfChampions = filtroRols.length;
+<<<<<<< HEAD
         console.log(numberOfChampions);
+=======
+        tableStats.style.display = "none";
+        sectionElementRol.style.display = "block";
+        mainCardsLol.style.display = "flex";
+
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
         const nameRol = 
-        ` 
+        `
+        <div> 
         <img src="./images/tank_icon.png">
         <p>TANKS</p>
+        </div>
+        <div>
+        <h2> Here you will find <font color="#af0e2d">${numberOfChampions}</font> champions</h2>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);
@@ -370,11 +518,21 @@ lowDifficulty.addEventListener("click",(e)=>{
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
     orderChampionsLol.style.display="none";
-    sectionElementRol.innerHTML="";
+    tableStats.style.display = "none";
+    mainCardsLol.style.display = "flex";
+    sectionElementRol.style.display = "block";
+
+    const nameDifficulty = 
+        `
+        <div> 
+        <p>LOW DIFFICULTY</p>
+        </div>`;
     
+    sectionElementRol.innerHTML = nameDifficulty;
+
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
-    
+ 
 
 });
 moderateDifficulty.addEventListener("click",(e)=>{
@@ -385,8 +543,19 @@ moderateDifficulty.addEventListener("click",(e)=>{
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty) && (e.info.difficulty <= rangeDifficulty2)));
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    sectionElementRol.style.display ="none";
     orderChampionsLol.style.display="none";
+    tableStats.style.display = "none";
+    mainCardsLol.style.display = "flex";
+    sectionElementRol.style.display = "block";
+
+    const nameDifficulty = 
+        `
+        <div> 
+        <p>MODERATE DIFFICULTY</p>
+        </div>`;
+    
+    sectionElementRol.innerHTML = nameDifficulty;
+    
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
     
@@ -397,16 +566,30 @@ highDifficulty.addEventListener("click",()=>{
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty)));
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    sectionElementRol.style.display ="none";
     orderChampionsLol.style.display="none";
+    tableStats.style.display = "none";
+    mainCardsLol.style.display = "flex";
+    sectionElementRol.style.display = "block";
+
+    const nameDifficulty = 
+        `
+        <div> 
+        <p>HIGH DIFFICULTY</p>
+        </div>`;
+    
+    sectionElementRol.innerHTML = nameDifficulty;
+
     const showLowDifficulty = showFilterByDifficulty(getLowDifficulty);
     showChampions(showLowDifficulty);
     
 });
 
-// order AZ ZA
+// -> order AZ & ZA - menu all
 const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
+<<<<<<< HEAD
 // console.log(alphabeticalOrder);
+=======
+>>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
@@ -424,10 +607,9 @@ alphabeticalOrder.addEventListener('change', (e)=>{
     }
     
 });
-// search champions
 
+// -> search champions - menu all
 const searchChampions = document.querySelector("#searchChampions");
-
 searchChampions.addEventListener("keyup", (e)=>{
     e.preventDefault();
     mainCardsLol.innerHTML="";
@@ -493,24 +675,61 @@ document.body.addEventListener('click', (e) =>{
     }
 })
 
-// champions stat
+/** menu stats **/
 const championsStat = document.querySelector("#championsStat");
-
+const percentageChampions = document.querySelector('#percentageChampions');
+// -> funciones del menu stats
 championsStat.addEventListener( 'click', (e) => {
     e.preventDefault();
-    sectionElementRol.remove();
-    orderChampionsLol.remove();
-    bannerLol.remove();
-    mainSliderLol.remove();
-    mainCardsLol.remove();
+    sectionElementRol.style.display = "none";
+    orderChampionsLol.style.display = "none";
+    bannerLol.style.display = "none";
+    mainSliderLol.style.display = "none";
+    mainCardsLol.style.display = "none";
 
     const tableStats = document.querySelector('#tableStats');
     tableStats.style.display = "block";
     tableStats.style.display = "flex";
     tableStats.style.justifyContent = "center";
     const tableBody = document.querySelector('#tablebody');
-    //mainContainer.innerHTML = "";
 
+    /** porcentaje asesinos **/
+    percentageChampions.addEventListener('change', (optionPercentage) => {
+        const roles = optionPercentage.target.value;
+        const tdPorcentaje = document.querySelector('#tdPorcentaje');
+        if(roles == 'Assassin'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+        if(roles == 'Fighter'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+        if(roles == 'Mage'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+        if(roles == 'Marksman'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+        if(roles == 'Support'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+        if(roles == 'Tank'){
+            const filtroRols = showFilterRols(dataLolArray,roles);
+            const roundAverageLol = averageLol(filtroRols);
+            tdPorcentaje.innerHTML = roundAverageLol + "%";
+        }
+})
+
+    /** tabla de datos **/
     dataLolArray.forEach( (data) =>{
 
             let nameChampions = ` <td>${data.name}</td> `;
@@ -525,6 +744,6 @@ championsStat.addEventListener( 'click', (e) => {
             const allTable = `<tr>${imgChampions+nameChampions+hpChampions+mpChampions+armorChampions+attackrChampions+moveChampions+attackdChampions}</tr>`
 
             tableBody.innerHTML += allTable;
-            console.log(allTable);
         })
-} )
+})
+
