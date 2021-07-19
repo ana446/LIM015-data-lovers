@@ -89,22 +89,6 @@ header {
   display: block;
 }
 
-.searchLol {
-  display: flex;
-  color: white;
-}
-.searchLol input {
-  padding: 0 20px 0 20px;
-  font-size: 16px;
-  margin-left: 20px;
-  border-radius: 8px;
-  /* text-transform: uppercase; */
-}
-
-.searchLol a {
-  pointer-events: none;
-}
-
 .menuItems .logo {
   background: #202328;
   cursor: pointer;
@@ -423,16 +407,42 @@ main .mainCardsLol {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.sectionElementRol > img {
-  width: 65px;
-  margin: 20px 0 20px 0;
-}
-.sectionElementRol > p {
+.sectionElementRol div:first-child{
+  display: inline-flex;
+  align-items: center;
   font-size: 50px;
   font-weight: bold;
   margin-left: 10px;
   text-shadow: -4px 3px 0 #efb810;
+}
+.sectionElementRol img {
+  width: 65px;
+  margin: 20px 0 20px 0;
+}
+
+/** search & order **/
+.searchLol {
+  display: flex;
+  align-items: center;
+}
+.searchLol input {
+  padding: 0 20px 0 20px;
+  font-size: 16px;
+  margin-left: 20px;
+  border-radius: 8px;
+  /* text-transform: uppercase; */
+}
+
+/** orderChampionsLol **/
+#orderChampionsLol {
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+#alphabeticalOrder {
+  margin: 10px 27px 10px 8px;
 }
 
 /**** TABLE ********/
@@ -487,6 +497,34 @@ main .mainCardsLol {
 }
 
 /**** FIN *********/
+
+/**** tabla porcentaje ***/
+.championsPercentageTable {
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  background: #202328;
+}
+.championsPercentageTable thead{
+  color: #fff;
+  text-shadow: 0px 3px 3px #109fef;
+  
+}
+.championsPercentageTable thead tr th{
+  padding: 15px 5px 15px 5px;
+}
+.championsPercentageTable tbody select{
+  border: none;
+  background: transparent;
+  color: #efb810;
+}
+.championsPercentageTable tbody tr td{
+  padding: 10px 5px 10px 5px;
+}
+#tdPorcentaje {
+  color: #fff;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
