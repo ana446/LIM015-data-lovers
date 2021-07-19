@@ -1939,7 +1939,7 @@ export default {
       splash:
         "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg",
       blurb:
-        "From the Journal of Professor Cecil B. Heimerdinger<br><br>10.14<br><br>09:15<br><br>Current meteorological conditions in Bandle City seem optimal. Atmospheric pressure is ideal for today's experiments!<br><br>Running a fifth trial for my ...",
+        "From the Journal of Professor Cecil B. Heimerdinger Current meteorological conditions in Bandle City seem optimal. Atmospheric pressure is ideal for today's experiments!<br><br>Running a fifth trial for my ...",
       info: {
         attack: 2,
         defense: 6,

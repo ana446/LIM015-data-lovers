@@ -85,37 +85,13 @@ header {
   font-size: 16px;
 }
 
-.menuItems li:last-child {
-  border-radius: 0px 0px 15px 15px;
-}
-
 .menuItems .subMenuItems:hover > ul {
   display: block;
-}
-
-.searchLol {
-  display: flex;
-  color: white;
-}
-.searchLol input {
-  padding: 0 20px 0 20px;
-  font-size: 16px;
-  margin-left: 20px;
-  border-radius: 8px;
-  /* text-transform: uppercase; */
-}
-
-.searchLol a {
-  pointer-events: none;
 }
 
 .menuItems .logo {
   background: #202328;
   cursor: pointer;
-}
-
-.menuItems .searchLol:hover {
-  background: #202328;
 }
 
 .menuItems li:hover {
@@ -420,7 +396,10 @@ main {
 main .mainCardsLol {
   padding-top: 1050px;
 }
-
+/*tableStats*/
+#statTable {
+  display: none;
+}
 /* sectionElementRol*/
 .sectionElementRol {
   display: flex;
@@ -436,6 +415,32 @@ main .mainCardsLol {
   font-weight: bold;
   margin-left: 10px;
   text-shadow: -4px 3px 0 #efb810;
+}
+.sectionElementRol div {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* orderChampionsLol */
+#orderChampionsLol {
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+#alphabeticalOrder {
+  margin: 10px 27px 10px 8px;
+}
+
+.searchLol {
+  display: flex;
+  align-items: center;
+}
+.searchLol input {
+  padding: 0 20px 0 20px;
+  font-size: 16px;
+  margin-left: 20px;
+  border-radius: 8px;
+  /* text-transform: uppercase; */
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -532,7 +537,7 @@ main .mainCardsLol {
 video {
   object-fit: cover;
   width: 100vw;
-  height: 500px;
+  height: 80vh;
 }
 article {
   position: absolute;
@@ -548,7 +553,7 @@ article img {
 }
 .videoText {
   position: absolute;
-  top: 80%;
+  /* top: 80%; */
   width: 100%;
   font-size: 50px;
   letter-spacing: 3px;

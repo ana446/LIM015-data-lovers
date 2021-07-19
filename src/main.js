@@ -74,6 +74,64 @@ function showSliderLol() {
 }
 showSliderLol();
 
+// show all champions
+function showChampions (dataLolArray)  {
+    dataLolArray.forEach((e) => {
+       
+       const boxCardsLol = document.createElement("section");
+       const showCardsLol = document.createElement("section");
+       const faceCardsLol = document.createElement("section");
+       const backOfCardsLol = document.createElement("section");
+       const buttonInformation = document.createElement("button")
+       boxCardsLol.setAttribute("class", "boxCardsLol");
+       showCardsLol.setAttribute("class","showCardsLol");
+       faceCardsLol.setAttribute("class","faceCardsLol");
+       backOfCardsLol.setAttribute("class","backOfCardsLol");
+       buttonInformation.setAttribute("class","buttonInformation");
+       buttonInformation.setAttribute("id", e.id);
+       buttonInformation.textContent="More";
+       const nameChampion = 
+       ` 
+       <img src="${e.splash}">
+       <p class="nameLol"> ${e.name}</p>
+       `; 
+       const  infoChampions = `
+       <table class= "infoChampions">
+           <tr>
+               <th colspan="2">INFORMATION </th>
+           </tr>
+           <tr>
+               <th>Attack</th>
+               <td>${e.info.attack}</td>
+           </tr>
+           <tr>
+               <th>Defense</th>
+               <td>${e.info.defense}</td>
+           </tr>
+           <tr>
+               <th>Magic</th>
+               <td>${e.info.magic}</td>
+           </tr>
+           <tr>
+               <th>Difficulty</th>
+               <td>${e.info.difficulty}</td>
+           </tr>
+       </table>
+       
+       `;
+       // const <button class="buttonInformation"> More</button>
+       faceCardsLol.innerHTML = nameChampion;
+       backOfCardsLol.innerHTML = infoChampions;
+       mainCardsLol.appendChild(boxCardsLol);
+       boxCardsLol.appendChild(showCardsLol); 
+       showCardsLol.appendChild(faceCardsLol);
+       showCardsLol.appendChild(backOfCardsLol);
+       backOfCardsLol.appendChild(buttonInformation);
+
+   })
+   
+}
+//showChampions(dataLolArray);
 
 //show roles filter - landingpage
 const cardAssassinsLol = document.querySelector('#cardAssassins');
@@ -109,86 +167,16 @@ function reloadPage(){
     location.reload();
 }
 
-
-// show all champions- landing page
-
- function showChampions (dataLolArray)  {
-     dataLolArray.forEach((e) => {
-        
-        const boxCardsLol = document.createElement("section");
-        const showCardsLol = document.createElement("section");
-        const faceCardsLol = document.createElement("section");
-        const backOfCardsLol = document.createElement("section");
-        const buttonInformation = document.createElement("button")
-        boxCardsLol.setAttribute("class", "boxCardsLol");
-        showCardsLol.setAttribute("class","showCardsLol");
-        faceCardsLol.setAttribute("class","faceCardsLol");
-        backOfCardsLol.setAttribute("class","backOfCardsLol");
-        buttonInformation.setAttribute("class","buttonInformation");
-        buttonInformation.setAttribute("id", e.id);
-        buttonInformation.textContent="More";
-        const nameChampion = 
-        ` 
-        <img src="${e.splash}">
-        <p class="nameLol"> ${e.name}</p>
-        `; 
-        const  infoChampions = `
-        <table class= "infoChampions">
-            <tr>
-                <th colspan="2">INFORMATION </th>
-            </tr>
-            <tr>
-                <th>Attack</th>
-                <td>${e.info.attack}</td>
-            </tr>
-            <tr>
-                <th>Defense</th>
-                <td>${e.info.defense}</td>
-            </tr>
-            <tr>
-                <th>Magic</th>
-                <td>${e.info.magic}</td>
-            </tr>
-            <tr>
-                <th>Difficulty</th>
-                <td>${e.info.difficulty}</td>
-            </tr>
-        </table>
-        
-        `;
-        // const <button class="buttonInformation"> More</button>
-        faceCardsLol.innerHTML = nameChampion;
-        backOfCardsLol.innerHTML = infoChampions;
-        mainCardsLol.appendChild(boxCardsLol);
-        boxCardsLol.appendChild(showCardsLol); 
-        showCardsLol.appendChild(faceCardsLol);
-        showCardsLol.appendChild(backOfCardsLol);
-        backOfCardsLol.appendChild(buttonInformation);       
-
-    })
-}
-//showChampions(dataLolArray);
-
 //show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    orderChampionsLol.style.display="block";
+    // orderChampionsLol.style.display="block";
+    orderChampionsLol.style.display="flex";
     mainCardsLol.innerHTML="";
     removeMenuLOl();
-    // const selectOrderAlphabet =  document.createElement("button");
-    // selectOrderAlphabet.setAttribute("class","orderAlphabetical");
-    // selectOrderAlphabet.textContent="Z-A";
-    // //  <option value="AZ">A-Z</option>
-    // // <option value="ZA">Z-A</option>
-    // // `;
-    // const labelOrder=`
-    // <label for="orderAlphabetic" >order Alphabetic</label>
-    // `;
-    // // selectOrderAlphabet.innerHTML = divOrder;
-    
     const nameRol =
     ` 
     <img src="./images/assessin_icon.png">
@@ -199,8 +187,6 @@ allChampion.addEventListener('click', (e) => {
     <img src="./images/tank_icon.png">
     `; 
     sectionElementRol.innerHTML = nameRol;
-    // sectionElementRol.innerHTML = labelOrder;
-    // sectionElementRol.appendChild(selectOrderAlphabet);
     showChampions(dataLolArray);
 })
 
@@ -222,10 +208,16 @@ const filterbyAssassins = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
+        const numberOfChampions = filtroRols.length;
+        console.log(numberOfChampions);
         const nameRol = 
-        ` 
-        <img src="./images/assessin_icon.png">
-        <p>ASSESSINS</p>
+        `<div>
+            <img src="./images/assessin_icon.png">
+            <p>ASSESSINS </p>
+        </div>
+        <div>
+            <span> Hay${numberOfChampions} </span>
+        </div>
         `; 
         sectionElementRol.innerHTML = nameRol;
         showChampions(filtroRols);    
@@ -248,6 +240,7 @@ const filterbyFighters = () => {
         <p> FIGHTERS</p>
         `; 
         sectionElementRol.innerHTML = nameRol;
+        console.log(filtroRols.length);
         showChampions(filtroRols);
     }
 }
@@ -406,7 +399,7 @@ highDifficulty.addEventListener("click",()=>{
 
 // order AZ ZA
 const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
-console.log(alphabeticalOrder);
+// console.log(alphabeticalOrder);
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
@@ -493,6 +486,9 @@ document.body.addEventListener('click', (e) =>{
         });
     }
 })
+
+//stats data
+
 
 
 
