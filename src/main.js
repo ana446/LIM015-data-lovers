@@ -406,7 +406,7 @@ highDifficulty.addEventListener("click",()=>{
 
 // order AZ ZA
 const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
-console.log(alphabeticalOrder);
+//console.log(alphabeticalOrder);
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
@@ -467,7 +467,6 @@ document.body.addEventListener('click', (e) =>{
                     <div class="boxChampion">
                         <img src="${findChampion.splash}">
                     </div>
-
                     <div class="blurbInformation">
                         <div class ="titleChampion">
                             <p>${findChampion.title}</p>
@@ -494,6 +493,38 @@ document.body.addEventListener('click', (e) =>{
     }
 })
 
+// champions stat
+const championsStat = document.querySelector("#championsStat");
 
+championsStat.addEventListener( 'click', (e) => {
+    e.preventDefault();
+    sectionElementRol.remove();
+    orderChampionsLol.remove();
+    bannerLol.remove();
+    mainSliderLol.remove();
+    mainCardsLol.remove();
 
+    const tableStats = document.querySelector('#tableStats');
+    tableStats.style.display = "block";
+    tableStats.style.display = "flex";
+    tableStats.style.justifyContent = "center";
+    const tableBody = document.querySelector('#tablebody');
+    //mainContainer.innerHTML = "";
 
+    dataLolArray.forEach( (data) =>{
+
+            let nameChampions = ` <td>${data.name}</td> `;
+            let imgChampions = `<td><img src="${data.img}"></td> `
+            let hpChampions = ` <td>${data.stats.hp}</td> `;
+            let mpChampions = ` <td>${data.stats.mp}</td> `;
+            let armorChampions = ` <td>${data.stats.armor}</td> `;
+            let attackrChampions = ` <td>${data.stats.attackrange}</td> `;
+            let moveChampions = ` <td>${data.stats.movespeed}</td> `;
+            let attackdChampions = ` <td>${data.stats.attackdamage}</td> `;
+
+            const allTable = `<tr>${imgChampions+nameChampions+hpChampions+mpChampions+armorChampions+attackrChampions+moveChampions+attackdChampions}</tr>`
+
+            tableBody.innerHTML += allTable;
+            console.log(allTable);
+        })
+} )

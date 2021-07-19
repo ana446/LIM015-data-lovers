@@ -85,10 +85,6 @@ header {
   font-size: 16px;
 }
 
-.menuItems li:last-child {
-  border-radius: 0px 0px 15px 15px;
-}
-
 .menuItems .subMenuItems:hover > ul {
   display: block;
 }
@@ -282,7 +278,7 @@ footer section {
 }
 .infoChampions td,
 th {
-  background-color: #333436;
+  background-color: #333436;/**/
   width: 110px;
   padding: 5px;
   /* text-transform: uppercase; */
@@ -411,6 +407,7 @@ span:hover {
 main {
   padding-top: 100px;
   text-align: center;
+
 }
 .mainSliderLol {
   align-items: center;
@@ -437,6 +434,59 @@ main .mainCardsLol {
   margin-left: 10px;
   text-shadow: -4px 3px 0 #efb810;
 }
+
+/**** TABLE ********/
+#tableStats {
+  display: none;
+  background-image: url(./images/fondomapa2.jpg);
+  background-attachment: fixed;
+}
+
+.championsStatsTable {
+  background: #202328;
+  color: #fff;
+  margin: 50px;
+  border-collapse: collapse;
+}
+.championsStatsTable thead{
+  /*table-layout: fixed;*/
+  /*background: #202328 !important;
+  width: 500px;*/
+  text-shadow: 0px 3px 3px #109fef;
+}
+
+#tablebody{
+  /*overflow: auto;
+  display: block;
+  height: 300px;
+  width: 500px;*/
+  
+}
+#tablebody tr{
+  /*display: block;*/
+  border-bottom: 1px solid #fff;
+}
+#tablebody td{
+  /*float: left;*/
+  padding: 10px 5px 10px 5px;
+}
+.championsStatsTable thead tr{
+  /*display: block;
+  position: relative;*/
+  
+}
+.championsStatsTable td:nth-child(2){
+  /*display: block;
+  position: relative;*/
+  color: #efb810;
+}
+
+.championsStatsTable thead tr th{
+  /*float: left;*/
+  padding: 15px 5px 15px 5px;
+}
+
+/**** FIN *********/
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -532,7 +582,7 @@ main .mainCardsLol {
 video {
   object-fit: cover;
   width: 100vw;
-  height: 500px;
+  height: 80vh;
 }
 article {
   position: absolute;
@@ -548,7 +598,6 @@ article img {
 }
 .videoText {
   position: absolute;
-  top: 80%;
   width: 100%;
   font-size: 50px;
   letter-spacing: 3px;
