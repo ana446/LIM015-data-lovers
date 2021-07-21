@@ -6,6 +6,7 @@ const dataLolArray = Object.values(champions.data);
 const menuItems = document.querySelector('.menuItems');
 const mainContainer = document.querySelector('#mainContainer');
 const mainCardsLol = document.getElementById("mainCardsLol");
+const tableStats = document.querySelector('#tableStats');
 // menu Hamburguesa
 addEventListener('DOMContentLoaded', () => {
     const buttonMenu = document.querySelector('.buttonMenu')
@@ -426,7 +427,7 @@ lowDifficulty.addEventListener("click",(e)=>{
     tableStats.style.display = "none";
     mainCardsLol.style.display = "flex";
     sectionElementRol.style.display = "block";
-
+    removeMenuLOl();
     const nameDifficulty = 
         `
         <div> 
@@ -452,7 +453,7 @@ moderateDifficulty.addEventListener("click",(e)=>{
     tableStats.style.display = "none";
     mainCardsLol.style.display = "flex";
     sectionElementRol.style.display = "block";
-
+    removeMenuLOl();
     const nameDifficulty = 
         `
         <div> 
@@ -475,7 +476,7 @@ highDifficulty.addEventListener("click",()=>{
     tableStats.style.display = "none";
     mainCardsLol.style.display = "flex";
     sectionElementRol.style.display = "block";
-
+    removeMenuLOl();
     const nameDifficulty = 
         `
         <div> 
@@ -495,7 +496,7 @@ alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
 
-    console.log(optionSelect);
+    //console.log(optionSelect);
     if(optionSelect == 'ZA' ){
         mainCardsLol.innerHTML="";
         const getOrderAlphabeticalZA  = orderByAlphabeticalZA(dataLolArray);
@@ -587,8 +588,8 @@ championsStat.addEventListener( 'click', (e) => {
     bannerLol.style.display = "none";
     mainSliderLol.style.display = "none";
     mainCardsLol.style.display = "none";
-
-    const tableStats = document.querySelector('#tableStats');
+    removeMenuLOl();
+    //const tableStats = document.querySelector('#tableStats');
     tableStats.style.display = "block";
     tableStats.style.display = "flex";
     tableStats.style.justifyContent = "center";
