@@ -10,7 +10,7 @@ export const showFilterByDifficulty = (dataLolArray) => {
  const  filterByDifficulty = dataLolArray.sort((a,b)=>a.info.difficulty - b.info.difficulty);
  return filterByDifficulty;
 
- };
+ }; 
 
  //show order A-Z 
  export const orderByAlphabeticalAZ = (dataLolArray) => {

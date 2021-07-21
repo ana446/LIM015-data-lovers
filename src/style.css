@@ -375,14 +375,6 @@ span:hover {
   padding-top: 20px;
 }
 
-/* @keyframes openModal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
 /* main */
 main {
   padding-top: 100px;
@@ -397,9 +389,7 @@ main .mainCardsLol {
   padding-top: 1050px;
 }
 /*tableStats*/
-#statTable {
-  display: none;
-}
+
 /* sectionElementRol*/
 .sectionElementRol {
   display: flex;
@@ -407,7 +397,7 @@ main .mainCardsLol {
   align-items: center;
   flex-direction: column;
 }
-.sectionElementRol div:first-child{
+.sectionElementRol div:first-child {
   display: inline-flex;
   align-items: center;
   font-size: 50px;
@@ -415,30 +405,12 @@ main .mainCardsLol {
   margin-left: 10px;
   text-shadow: -4px 3px 0 #efb810;
 }
-<<<<<<< HEAD
-.sectionElementRol div {
-  display: inline-flex;
-  align-items: center;
-}
-
-/* orderChampionsLol */
-#orderChampionsLol {
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-}
-#alphabeticalOrder {
-  margin: 10px 27px 10px 8px;
-}
-
-=======
 .sectionElementRol img {
   width: 65px;
   margin: 20px 0 20px 0;
 }
 
 /** search & order **/
->>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
 .searchLol {
   display: flex;
   align-items: center;
@@ -450,25 +422,24 @@ main .mainCardsLol {
   border-radius: 8px;
   /* text-transform: uppercase; */
 }
-<<<<<<< HEAD
-=======
 
 /** orderChampionsLol **/
 #orderChampionsLol {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 #alphabeticalOrder {
   margin: 10px 27px 10px 8px;
 }
->>>>>>> 78e9ff7652f1efe6c091d69ee73e24b136a1dd53
 
 /**** TABLE ********/
 #tableStats {
   display: none;
   background-image: url(./images/fondomapa2.jpg);
   background-attachment: fixed;
+  flex-wrap: wrap;
 }
 
 .championsStatsTable {
@@ -484,12 +455,12 @@ main .mainCardsLol {
   text-shadow: 0px 3px 3px #109fef;
 }
 
-#tablebody {
+/* #tablebody {
   /*overflow: auto;
   display: block;
   height: 300px;
-  width: 500px;*/
-}
+  width: 500px;
+} */
 #tablebody tr {
   /*display: block;*/
   border-bottom: 1px solid #fff;
@@ -498,10 +469,10 @@ main .mainCardsLol {
   /*float: left;*/
   padding: 10px 5px 10px 5px;
 }
-.championsStatsTable thead tr {
-  /*display: block;
-  position: relative;*/
-}
+/* .championsStatsTable thead tr {
+  display: block;
+  position: relative;
+} */
 .championsStatsTable td:nth-child(2) {
   /*display: block;
   position: relative;*/
@@ -522,116 +493,23 @@ main .mainCardsLol {
   margin-left: 50px;
   background: #202328;
 }
-.championsPercentageTable thead{
+.championsPercentageTable thead {
   color: #fff;
   text-shadow: 0px 3px 3px #109fef;
-  
 }
-.championsPercentageTable thead tr th{
+.championsPercentageTable thead tr th {
   padding: 15px 5px 15px 5px;
 }
-.championsPercentageTable tbody select{
+.championsPercentageTable tbody select {
   border: none;
   background: transparent;
   color: #efb810;
 }
-.championsPercentageTable tbody tr td{
+.championsPercentageTable tbody tr td {
   padding: 10px 5px 10px 5px;
 }
 #tdPorcentaje {
   color: #fff;
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .logo {
-    padding-left: 35px;
-    width: 34px;
-  }
-  .menuItems li a {
-    font-size: 16px;
-  }
-  .showCardsLol p {
-    font-size: 15px;
-  }
-  .showCardsLol img {
-    width: 150px;
-  }
-  .bannerLol p {
-    font-size: 16px;
-    padding: 0 50px 0 50px;
-  }
-  .menu .logoInformation {
-    font-size: 16px;
-    padding-left: 10px;
-  }
-  .main {
-    padding-block-end: 65px;
-  }
-  .sectionElementRol > p {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .menu {
-    height: 65px;
-  }
-  .buttonMenu {
-    display: inline-flex;
-  }
-  .menuItems {
-    position: fixed;
-    width: 100vw;
-    height: calc(100% - 65px);
-    background: #202328;
-    top: -100vh;
-    text-align: center;
-    transform: all 0.4s;
-    flex-direction: column;
-  }
-  .menuItems li {
-    margin: 10px 0 0 0;
-    line-height: 30px;
-  }
-  .menuItems li:hover {
-    background: none;
-  }
-  .menuItems li a {
-    font-size: 20px;
-    color: #fff;
-    font-weight: bold;
-  }
-  .menuItems li a:hover {
-    color: #efb810;
-  }
-
-  .subMenu {
-    position: relative;
-  }
-  .subMenu li a {
-    font-size: 14px;
-  }
-
-  footer {
-    height: 60px;
-  }
-
-  footer section {
-    margin-top: 20px;
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 600px) and (orientation: landscape) {
-  .menuItems li {
-    margin: 5px 0 0 0;
-  }
-  .menuItems {
-    overflow: scroll;
-    height: calc(100% - 65px);
-  }
 }
 /* video */
 video {
