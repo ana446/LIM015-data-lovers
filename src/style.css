@@ -185,8 +185,8 @@ footer section {
 .boxCardsRoles {
   border: 3px solid #af0e2d;
   background-color: #202328;
-  width: 300px;
-  height: 250px;
+  /*width: 300px;
+  height: 250px;*/
   border-radius: 30px;
   margin: 20px;
   position: relative;
@@ -511,6 +511,10 @@ main .mainCardsLol {
 #tdPorcentaje {
   color: #fff;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c4a85d52b89a703b4cdf548d775449ab2d49a40
 /* video */
 video {
   object-fit: cover;
@@ -538,4 +542,246 @@ article img {
   /* font-family: Oswald, sans-serif; */
   text-shadow: 1px 1px 1px #16a085, 1px 1px 4px #2980b9;
   text-align: center;
+<<<<<<< HEAD
+=======
+}
+
+/* media query, min-width ancho igual o superior a 1200px *//* pantallas grandes */
+@media (min-width: 1024px) and (max-width: 1360px) {
+  #mainCardsLol {
+    padding: 0px 0px 0px;
+  }
+  .mainSliderLol article img {
+    margin-top: 25%;
+  }
+  .menuItems li {
+    margin: 0px 20px;
+  }
+  .menuItems li a {
+    font-size: 22px;
+  }
+  .menu .logoInformation {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1360px) and (max-width: 1440px) {
+  #mainCardsLol {
+    padding: 0px 170px 0px;
+  }
+  .mainSliderLol article img {
+    margin-top: 18%;
+  }
+  .menuItems{
+    margin-right: 50px;
+  }
+  .menuItems li {
+    margin: 0px 20px;
+  }
+  .menuItems li a {
+    font-size: 22px;
+  }
+  .menu .logoInformation {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #mainCardsLol {
+    padding: 0px 210px 0px;
+  }
+  .mainSliderLol article img {
+    margin-top: 15%;
+  }
+  .menuItems{
+    margin-right: 50px;
+  }
+  .menuItems li {
+    margin: 0px 20px;
+  }
+  .menuItems li a {
+    font-size: 24px;
+  }
+  .menu .logoInformation {
+    font-size: 24px;
+  }
+}
+
+/* media query, max-width ancho igual o menos a 800px *//* pantallas tablets */
+@media only screen and (max-width: 800px) {
+  .menu {
+    height: 75px;
+  }
+  .mainLogo .logo {
+    width: 10%;
+  }
+  .mainSliderLol video {
+    height: 50vh;
+  }
+  #mainContainer {
+    padding-top: 60px;
+  }
+  .videoText {
+    font-size: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mainSliderLol article img {
+    margin-top: 14%;
+  }
+  .buttonMenu {
+    display: inline-flex;
+  }
+  .menuItems {
+    position: fixed;
+    width: 100vw;
+    /*height: calc(100% - 65px);*/
+    background: #202328;
+    top: -100vh;
+    text-align: center;
+    transform: all 0.4s;
+    flex-direction: column;
+  }
+  .menuItems li {
+    margin: 10px 0 0 0;
+    line-height: 30px;
+  }
+  .menuItems li:hover {
+    background: none;
+  }
+  .menuItems li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .menuItems li a:hover {
+    color: #efb810;
+  }
+  .subMenu {
+    position: relative;
+  }
+  .subMenu li a {
+    font-size: 14px;
+  }
+  /*section elmentrol*/
+  .sectionElementRol {
+    margin-top: 15px;
+  }
+  /*modal*/
+  .informationChampion {
+    padding-top: 10px;
+  }
+  .informationChampion p {
+    font-size: 9px;
+  }
+  .bodyModal {
+    height: 250px;
+  }
+  .bodyModal img {
+    width: 130px;
+    height: 150px;
+  }
+  .bodyModal p {
+    font-size: 11px;
+  }
+  .bodyModal h1 {
+    font-size: 35px;
+  }
+  /*fin*/
+  footer {
+    height: 60px;
+  }
+  footer section {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  #orderChampionsLol {
+    padding: 0 50px;
+  }
+  #searchChampions {
+    width: 120px;
+  }
+  #tableStats {
+    flex-direction: column;
+  }
+  .championsPercentageTable {
+    margin-right: 50px;
+  }
+}
+
+/* media query, max-width ancho igual o menos a 425px *//* pantallas celular */
+@media only screen and (max-width: 425px) {
+  .menu {
+    height: 65px;
+  }
+  .mainLogo .logo {
+    width: 12%;
+  }
+  .mainSliderLol video {
+    height: 30vh;
+  }
+  #mainContainer {
+    padding-top: 60px;
+  }
+  .mainSliderLol article img {
+    margin-top: 18%;
+    width:  75vw;
+  }
+  .videoText {
+    font-size: 30px;
+  }
+  #mainContainer .bannerLol {
+    font-size: 20px;
+    padding: 20px 50px 20px 50px;
+  }
+  /*section elmentrol*/
+  .sectionElementRol {
+    margin-top: 5px;
+  }
+  /*modal*/
+  .modalChampionContent {
+    margin-top: 30%;
+    margin-left: 14%;
+    width: 71%;
+  }
+  .closeModal {
+    border-top-right-radius: 15px;
+    font-size: 10px;
+    padding: 6px 20px;
+  }
+  .informationChampion {
+    padding-top: 10px;
+  }
+  .informationChampion p {
+    font-size: 9px;
+  }
+  .headerModal {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 18px;
+  }
+  .bodyModal {
+    height: 150px;
+    width: 300px;
+    padding: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .bodyModal img {
+    width: 80px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  .bodyModal p {
+    font-size: 8px;
+    padding-right: 10px;
+  }
+  .bodyModal h1 {
+    font-size: 25px;
+  }
+  /*fin*/
+  #orderChampionsLol {
+    flex-direction: column;
+  }
+>>>>>>> 8c4a85d52b89a703b4cdf548d775449ab2d49a40
 }
