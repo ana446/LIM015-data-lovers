@@ -37,13 +37,10 @@ function showSliderLol() {
     </video>
     
     `;
-    // <img src="images/fondobaner.jpg"></img>
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainCardsLol.innerHTML = "";
     mainSliderLol.innerHTML = sliderLolLogo;
     bannerLol.innerHTML = bannerLolText;
-    //const cardsRoles = createElement('section');
-    //cardsRoles.setAttribute('id','mainCardsLol');
     const boxCardsRoles = `
         <section id="cardAssassins" class="boxCardsRoles">
             <img src="images/cards-asesinos.jpg">
@@ -75,6 +72,63 @@ function showSliderLol() {
 }
 showSliderLol();
 
+// show all champions
+function showChampions (dataLolArray)  {
+    dataLolArray.forEach((e) => {
+       const boxCardsLol = document.createElement("section");
+       const showCardsLol = document.createElement("section");
+       const faceCardsLol = document.createElement("section");
+       const backOfCardsLol = document.createElement("section");
+       const buttonInformation = document.createElement("button")
+       boxCardsLol.setAttribute("class", "boxCardsLol");
+       showCardsLol.setAttribute("class","showCardsLol");
+       faceCardsLol.setAttribute("class","faceCardsLol");
+       backOfCardsLol.setAttribute("class","backOfCardsLol");
+       buttonInformation.setAttribute("class","buttonInformation");
+       buttonInformation.setAttribute("id", e.id);
+       buttonInformation.textContent="More";
+       const nameChampion = 
+       ` 
+       <img src="${e.splash}">
+       <p class="nameLol"> ${e.name}</p>
+       `; 
+       const  infoChampions = `
+       <table class= "infoChampions">
+           <tr>
+               <th colspan="2">INFORMATION </th>
+           </tr>
+           <tr>
+               <th>Attack</th>
+               <td>${e.info.attack}</td>
+           </tr>
+           <tr>
+               <th>Defense</th>
+               <td>${e.info.defense}</td>
+           </tr>
+           <tr>
+               <th>Magic</th>
+               <td>${e.info.magic}</td>
+           </tr>
+           <tr>
+               <th>Difficulty</th>
+               <td>${e.info.difficulty}</td>
+           </tr>
+       </table>
+       
+       `;
+       // const <button class="buttonInformation"> More</button>
+       faceCardsLol.innerHTML = nameChampion;
+       backOfCardsLol.innerHTML = infoChampions;
+       mainCardsLol.appendChild(boxCardsLol);
+       boxCardsLol.appendChild(showCardsLol); 
+       showCardsLol.appendChild(faceCardsLol);
+       showCardsLol.appendChild(backOfCardsLol);
+       backOfCardsLol.appendChild(buttonInformation);
+
+   })
+   
+}
+//showChampions(dataLolArray);
 
 //show roles filter - landingpage
 const cardAssassinsLol = document.querySelector('#cardAssassins');
@@ -110,71 +164,15 @@ function reloadPage(){
     location.reload();
 }
 
-
-// show all champions- landing page
- function showChampions (dataLolArray)  {
-     dataLolArray.forEach((e) => {
-        
-        const boxCardsLol = document.createElement("section");
-        const showCardsLol = document.createElement("section");
-        const faceCardsLol = document.createElement("section");
-        const backOfCardsLol = document.createElement("section");
-        const buttonInformation = document.createElement("button")
-        boxCardsLol.setAttribute("class", "boxCardsLol");
-        showCardsLol.setAttribute("class","showCardsLol");
-        faceCardsLol.setAttribute("class","faceCardsLol");
-        backOfCardsLol.setAttribute("class","backOfCardsLol");
-        buttonInformation.setAttribute("class","buttonInformation");
-        buttonInformation.setAttribute("id", e.id);
-        buttonInformation.textContent="More";
-        const nameChampion = 
-        ` 
-        <img src="${e.splash}">
-        <p class="nameLol"> ${e.name}</p>
-        `; 
-        const  infoChampions = `
-        <table class= "infoChampions">
-            <tr>
-                <th colspan="2">INFORMATION </th>
-            </tr>
-            <tr>
-                <th>Attack</th>
-                <td>${e.info.attack}</td>
-            </tr>
-            <tr>
-                <th>Defense</th>
-                <td>${e.info.defense}</td>
-            </tr>
-            <tr>
-                <th>Magic</th>
-                <td>${e.info.magic}</td>
-            </tr>
-            <tr>
-                <th>Difficulty</th>
-                <td>${e.info.difficulty}</td>
-            </tr>
-        </table>
-        
-        `;
-        // const <button class="buttonInformation"> More</button>
-        faceCardsLol.innerHTML = nameChampion;
-        backOfCardsLol.innerHTML = infoChampions;
-        mainCardsLol.appendChild(boxCardsLol);
-        boxCardsLol.appendChild(showCardsLol); 
-        showCardsLol.appendChild(faceCardsLol);
-        showCardsLol.appendChild(backOfCardsLol);
-        backOfCardsLol.appendChild(buttonInformation);       
-
-    })
-}
-
 //show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
+// const tableStats = document.querySelector('#tableStats');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    orderChampionsLol.style.display="block";
+    // orderChampionsLol.style.display="block";
+    orderChampionsLol.style.display="flex";
     mainCardsLol.innerHTML="";
     tableStats.style.display = "none";
     orderChampionsLol.style.display = "flex";
@@ -306,11 +304,10 @@ const filterbyMarksmen = () => {
         bannerLol.style.display ="none";
         mainSliderLol.style.display ="none";
         orderChampionsLol.style.display="none";
-        const numberOfChampions = filtroRols.length;
         tableStats.style.display = "none";
         sectionElementRol.style.display = "block";
         mainCardsLol.style.display = "flex";
-
+        const numberOfChampions = filtroRols.length;
         const nameRol = 
         `
         <div> 
@@ -495,8 +492,6 @@ const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
-
-    //console.log(optionSelect);
     if(optionSelect == 'ZA' ){
         mainCardsLol.innerHTML="";
         const getOrderAlphabeticalZA  = orderByAlphabeticalZA(dataLolArray);
@@ -588,13 +583,15 @@ championsStat.addEventListener( 'click', (e) => {
     bannerLol.style.display = "none";
     mainSliderLol.style.display = "none";
     mainCardsLol.style.display = "none";
+    
+    const tableStats = document.querySelector('#tableStats');
     removeMenuLOl();
     //const tableStats = document.querySelector('#tableStats');
     tableStats.style.display = "block";
     tableStats.style.display = "flex";
     tableStats.style.justifyContent = "center";
     const tableBody = document.querySelector('#tablebody');
-
+    removeMenuLOl();
     /** porcentaje asesinos **/
     percentageChampions.addEventListener('change', (optionPercentage) => {
         const roles = optionPercentage.target.value;
@@ -636,16 +633,16 @@ championsStat.addEventListener( 'click', (e) => {
 
             let nameChampions = ` <td>${data.name}</td> `;
             let imgChampions = `<td><img src="${data.img}"></td> `
-            let hpChampions = ` <td>${data.stats.hp}</td> `;
-            let mpChampions = ` <td>${data.stats.mp}</td> `;
-            let armorChampions = ` <td>${data.stats.armor}</td> `;
+            let hpChampions = ` <td>${data.stats.hp.toFixed(1)}</td> `;
+            let mpChampions = ` <td>${data.stats.mp.toFixed(1)}</td> `;
+            let armorChampions = ` <td>${data.stats.armor.toFixed(1)}</td> `;
             let attackrChampions = ` <td>${data.stats.attackrange}</td> `;
             let moveChampions = ` <td>${data.stats.movespeed}</td> `;
-            let attackdChampions = ` <td>${data.stats.attackdamage}</td> `;
+            let attackdChampions = ` <td>${data.stats.attackdamage.toFixed(1)}</td> `;
 
             const allTable = `<tr>${imgChampions+nameChampions+hpChampions+mpChampions+armorChampions+attackrChampions+moveChampions+attackdChampions}</tr>`
 
             tableBody.innerHTML += allTable;
         })
-})
+});
 
