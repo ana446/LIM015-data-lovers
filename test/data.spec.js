@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import { showFilterRols, showFilterByDifficulty, orderByAlphabeticalAZ, orderByAlphabeticalZA, searchLol, averageLol } from '../src/data.js';
 
 
@@ -32,8 +30,8 @@ describe('orderByAlphabeticalAZ', () => {
   });
   
   it('Mostrar orden alfabetico de A - Z',() => {
-    const dataLolArray = [{name:"Ekko"},{name:"Ahri"},{name:"Shen"},{name:"Zyra"}];
-    expect(orderByAlphabeticalAZ(dataLolArray)).toEqual([{name:"Ahri"},{name:"Ekko"},{name:"Shen"},{name:"Zyra"}])
+    const dataLolArray = [{name:"Ekko"},{name:"Ahri"},{name:"Shen"},{name:"Zyra"},{name:"Ekko"}];
+    expect(orderByAlphabeticalAZ(dataLolArray)).toEqual([{name:"Ahri"},{name:"Ekko"},{name:"Ekko"},{name:"Shen"},{name:"Zyra"}])
   });
 });
 
@@ -43,8 +41,8 @@ describe('orderByAlphabeticalZA', () => {
   });
   
   it('Mostrar orden alfabetico de Z - A',() => {
-    const dataLolArray = [{name:"Ekko"},{name:"Ahri"},{name:"Shen"},{name:"Zyra"}];
-    expect(orderByAlphabeticalZA(dataLolArray)).toEqual([{name:"Zyra"},{name:"Shen"},{name:"Ekko"},{name:"Ahri"}])
+    const dataLolArray = [{name:"Shen"},{name:"Ekko"},{name:"Ahri"},{name:"Shen"},{name:"Zyra"}];
+    expect(orderByAlphabeticalZA(dataLolArray)).toEqual([{name:"Zyra"},{name:"Shen"},{name:"Shen"},{name:"Ekko"},{name:"Ahri"}])
   });
 });
 
@@ -69,4 +67,3 @@ describe('averageLol', () => {
     expect(averageLol(filtroRols)).toEqual(3);
   });
 });
->>>>>>> 8c4a85d52b89a703b4cdf548d775449ab2d49a40

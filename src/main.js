@@ -166,7 +166,7 @@ function reloadPage(){
 
 //show the champions/ menu-all
 const allChampion = document.querySelector('.allChampion');
-const tableStats = document.querySelector('#tableStats');
+// const tableStats = document.querySelector('#tableStats');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
     bannerLol.style.display ="none";
@@ -492,11 +492,6 @@ const alphabeticalOrder = document.querySelector('#alphabeticalOrder');
 alphabeticalOrder.addEventListener('change', (e)=>{
     e.preventDefault();
     const optionSelect = e.target.value;
-<<<<<<< HEAD
-=======
-
-    //console.log(optionSelect);
->>>>>>> 8c4a85d52b89a703b4cdf548d775449ab2d49a40
     if(optionSelect == 'ZA' ){
         mainCardsLol.innerHTML="";
         const getOrderAlphabeticalZA  = orderByAlphabeticalZA(dataLolArray);
@@ -588,13 +583,10 @@ championsStat.addEventListener( 'click', (e) => {
     bannerLol.style.display = "none";
     mainSliderLol.style.display = "none";
     mainCardsLol.style.display = "none";
-<<<<<<< HEAD
     
     const tableStats = document.querySelector('#tableStats');
-=======
     removeMenuLOl();
     //const tableStats = document.querySelector('#tableStats');
->>>>>>> 8c4a85d52b89a703b4cdf548d775449ab2d49a40
     tableStats.style.display = "block";
     tableStats.style.display = "flex";
     tableStats.style.justifyContent = "center";
