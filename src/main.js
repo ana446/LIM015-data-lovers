@@ -35,7 +35,6 @@ function showSliderLol() {
     <video autoplay muted loop playsinline preload="metadata">
 	  <source src="video/lolVideo.webm" type="video/webm">
     </video>
-    
     `;
     const bannerLolText = `<p>There are more than 130 champions, it will not take long <br> to find your favorite. </p>`;
     mainCardsLol.innerHTML = "";
@@ -68,7 +67,6 @@ function showSliderLol() {
         </section>
         `;
     mainCardsLol.innerHTML = boxCardsRoles;
-
 }
 showSliderLol();
 
@@ -113,8 +111,7 @@ function showChampions (dataLolArray)  {
                <th>Difficulty</th>
                <td>${e.info.difficulty}</td>
            </tr>
-       </table>
-       
+       </table>       
        `;
        // const <button class="buttonInformation"> More</button>
        faceCardsLol.innerHTML = nameChampion;
@@ -169,15 +166,14 @@ const allChampion = document.querySelector('.allChampion');
 // const tableStats = document.querySelector('#tableStats');
 allChampion.addEventListener('click', (e) => {
     e.preventDefault();
+    mainCardsLol.innerHTML="";
     bannerLol.style.display ="none";
     mainSliderLol.style.display ="none";
-    // orderChampionsLol.style.display="block";
-    orderChampionsLol.style.display="flex";
-    mainCardsLol.innerHTML="";
     tableStats.style.display = "none";
-    orderChampionsLol.style.display = "flex";
     sectionElementRol.style.display = "block";
     mainCardsLol.style.display = "flex";
+    orderChampionsLol.style.display="flex";
+    orderChampionsLol.style.display = "flex";
     removeMenuLOl();
    
     const nameRol =
@@ -202,7 +198,16 @@ const mageRols = document.querySelector('.mageRols');
 const marksmanRols = document.querySelector('.marksmanRols');
 const supportRols = document.querySelector('.supportRols');
 const tankRols = document.querySelector('.tankRols');
-const sectionElementRol = document.querySelector(".sectionElementRol")
+const sectionElementRol = document.querySelector(".sectionElementRol");
+const hideStylesByRolesAndDifficulty = ()=>{
+    bannerLol.style.display ="none";
+    mainSliderLol.style.display ="none";
+    orderChampionsLol.style.display="none";
+    tableStats.style.display = "none";
+    sectionElementRol.style.display = "block";
+    mainCardsLol.style.display = "flex";
+   
+};
 
 const filterbyAssassins = () => {
     const roles = "Assassin";
@@ -211,14 +216,8 @@ const filterbyAssassins = () => {
     if (roles === "Assassin") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
-
         const nameRol = 
         `
         <div> 
@@ -241,14 +240,8 @@ const filterbyFighters = () => {
     if (roles === "Fighter") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
-
         const nameRol = 
         `
         <div> 
@@ -271,14 +264,8 @@ const filterbyMages = () => {
     if (roles === "Mage") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
-
         const nameRol = 
         `
         <div> 
@@ -301,12 +288,7 @@ const filterbyMarksmen = () => {
     if (roles === "Marksman") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
         const nameRol = 
         `
@@ -330,14 +312,8 @@ const filterbySupports = () => {
     if (roles === "Support") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
-
         const nameRol = 
         `
         <div> 
@@ -360,17 +336,10 @@ const filterbyTanks = () => {
     if (roles === "Tank") {
         let filtroRols = showFilterRols(dataLolArray,roles);
         // console.log(filtroRols);
-        bannerLol.style.display ="none";
-        mainSliderLol.style.display ="none";
-        orderChampionsLol.style.display="none";
+        hideStylesByRolesAndDifficulty ();
         const numberOfChampions = filtroRols.length;
-        tableStats.style.display = "none";
-        sectionElementRol.style.display = "block";
-        mainCardsLol.style.display = "flex";
-
         const nameRol = 
-        `
-        <div> 
+        `<div> 
         <img src="./images/tank_icon.png">
         <p>TANKS</p>
         </div>
@@ -418,12 +387,7 @@ lowDifficulty.addEventListener("click",(e)=>{
     const rangeDifficulty = 3;
     mainCardsLol.innerHTML ="";
     const getLowDifficulty =  dataLolArray.filter((e)=>( e.info.difficulty <= rangeDifficulty));
-    bannerLol.style.display ="none";
-    mainSliderLol.style.display ="none";
-    orderChampionsLol.style.display="none";
-    tableStats.style.display = "none";
-    mainCardsLol.style.display = "flex";
-    sectionElementRol.style.display = "block";
+    hideStylesByRolesAndDifficulty();
     removeMenuLOl();
     const nameDifficulty = 
         `
@@ -444,12 +408,7 @@ moderateDifficulty.addEventListener("click",(e)=>{
     const rangeDifficulty2 = 6;
     mainCardsLol.innerHTML ="";
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty) && (e.info.difficulty <= rangeDifficulty2)));
-    bannerLol.style.display ="none";
-    mainSliderLol.style.display ="none";
-    orderChampionsLol.style.display="none";
-    tableStats.style.display = "none";
-    mainCardsLol.style.display = "flex";
-    sectionElementRol.style.display = "block";
+    hideStylesByRolesAndDifficulty();
     removeMenuLOl();
     const nameDifficulty = 
         `
@@ -467,12 +426,7 @@ highDifficulty.addEventListener("click",()=>{
     const rangeDifficulty = 6;
     mainCardsLol.innerHTML ="";
     const getLowDifficulty =  dataLolArray.filter((e)=>( (e.info.difficulty > rangeDifficulty)));
-    bannerLol.style.display ="none";
-    mainSliderLol.style.display ="none";
-    orderChampionsLol.style.display="none";
-    tableStats.style.display = "none";
-    mainCardsLol.style.display = "flex";
-    sectionElementRol.style.display = "block";
+    hideStylesByRolesAndDifficulty();
     removeMenuLOl();
     const nameDifficulty = 
         `
@@ -575,27 +529,25 @@ document.body.addEventListener('click', (e) =>{
 /** menu stats **/
 const championsStat = document.querySelector("#championsStat");
 const percentageChampions = document.querySelector('#percentageChampions');
-// -> funciones del menu stats
 championsStat.addEventListener( 'click', (e) => {
     e.preventDefault();
+    const tableStats = document.querySelector('#tableStats');
+    const tableBody = document.querySelector('#tablebody');
     sectionElementRol.style.display = "none";
     orderChampionsLol.style.display = "none";
     bannerLol.style.display = "none";
     mainSliderLol.style.display = "none";
     mainCardsLol.style.display = "none";
-    
-    const tableStats = document.querySelector('#tableStats');
-    removeMenuLOl();
-    //const tableStats = document.querySelector('#tableStats');
-    tableStats.style.display = "block";
     tableStats.style.display = "flex";
     tableStats.style.justifyContent = "center";
-    const tableBody = document.querySelector('#tablebody');
     removeMenuLOl();
-    /** porcentaje asesinos **/
+    /** percentege assasins **/
     percentageChampions.addEventListener('change', (optionPercentage) => {
         const roles = optionPercentage.target.value;
         const tdPorcentaje = document.querySelector('#tdPorcentaje');
+        if(roles == 'ROLE'){
+            tdPorcentaje.innerHTML = "";
+        }
         if(roles == 'Assassin'){
             const filtroRols = showFilterRols(dataLolArray,roles);
             const roundAverageLol = averageLol(filtroRols);
@@ -626,9 +578,7 @@ championsStat.addEventListener( 'click', (e) => {
             const roundAverageLol = averageLol(filtroRols);
             tdPorcentaje.innerHTML = roundAverageLol + "%";
         }
-})
-
-    /** tabla de datos **/
+    })
     dataLolArray.forEach( (data) =>{
 
             let nameChampions = ` <td>${data.name}</td> `;
@@ -639,9 +589,7 @@ championsStat.addEventListener( 'click', (e) => {
             let attackrChampions = ` <td>${data.stats.attackrange}</td> `;
             let moveChampions = ` <td>${data.stats.movespeed}</td> `;
             let attackdChampions = ` <td>${data.stats.attackdamage.toFixed(1)}</td> `;
-
             const allTable = `<tr>${imgChampions+nameChampions+hpChampions+mpChampions+armorChampions+attackrChampions+moveChampions+attackdChampions}</tr>`
-
             tableBody.innerHTML += allTable;
         })
 });
