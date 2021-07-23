@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"> 
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Lovers - LOL</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +24,7 @@
           <li class="allChampion"><a href="">ALL</a></li>
           <li class="subMenuItems"><a >Roles  </a> 
             <ul class="subMenu"   >
-            <li class="assassinRols"><a  href="">ASSESSINS</a></li>
+            <li class="assassinRols"><a  href="">ASSASSINS</a></li>
             <li class="fighterRols"><a href="">FIGHTERS</a></li>
             <li class="mageRols"><a href="">MAGES</a></li>
             <li class="marksmanRols"><a href="">MARKSMEN</a></li>
@@ -49,7 +50,7 @@
             </li>
             </ul>
           </li>
-          <li class="searchLol"><a href="">SEARCH</a><input type="search" id="searchChampions" placeholder="search"></li>
+            <li id="championsStat" class="championsStat"> <a href=""> STATS </a> </li>
         </ul>
         <span class="buttonMenu">
           <i class="fas fa-bars"></i>
@@ -60,14 +61,72 @@
     <main id="mainContainer">
       <section class="sectionElementRol">
       </section> 
+      <section id="orderChampionsLol" >
+        <label for="alphabeticalOrder">alphabetical Order</label>
+        <select name="alphabeticalOrder" id="alphabeticalOrder">
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
+        </select>
+        <div class="searchLol"><label>SEARCH</label><input type="search" id="searchChampions" placeholder="search"></div>
+      </section>
+      <!-- agregando para tabla-->
+      <section id="tableStats">
+
+        <table class="championsPercentageTable">
+          <thead>
+            <tr>
+              <th>CHAMPIONS</th>
+              <th>AVERAGE (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <select name="" id="percentageChampions">
+                  <option value="ROLE">ROLE</option>
+                  <option value="Assassin">ASSASSINS</option>
+                  <option value="Fighter">FIGHTERS</option>
+                  <option value="Mage">MAGES</option>
+                  <option value="Marksman">MARKSMAN</option>
+                  <option value="Support">SUPPORTS</option>
+                  <option value="Tank">TANKS</option>
+                </select>
+              </td>
+              <td id="tdPorcentaje">
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tableScroll">
+          <table class="championsStatsTable">
+            <thead>
+                <tr>
+                    <th colspan="2">CHAMPIONS</th>
+                    <th>HP</th>
+                    <th>MP</th>
+                    <th>ARMOR</th>
+                    <th>ATTACK R</th>
+                    <th>MOVESPEED</th>
+                    <th>ATTACK D</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+              
+            </tbody>
+        </table>
+        </div>
+       
+      </section>
+      <!-- fin -->
       <section class="mainSliderLol">
       </section> 
       <section class="bannerLol">
       </section>
       <section id="mainCardsLol">
       </section>
-      
-    </main>
+      </main>
 
     <footer>
       <section>
