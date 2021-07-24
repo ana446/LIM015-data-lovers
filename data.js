@@ -9,6 +9,7 @@ export const showFilterRols = (dataLolArray , roles) => {
 export const showFilterByDifficulty = (dataLolArray) => {
  const  filterByDifficulty = dataLolArray.sort((a,b)=>a.info.difficulty - b.info.difficulty);
  return filterByDifficulty;
+ console.log();
 
  }; 
 
